@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no,email=no" name=format-detection />
+<title>推荐</title>       
+<link rel="stylesheet" type="text/css" href="//static.gunqiu.com/static/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css?_=9" />  
+<script type="text/javascript" src="//static.gunqiu.com/static/2.0.1/gqjssdk.min.js?_=9"></script>   
+<link rel="stylesheet" type="text/css" href="mescroll/mescroll.min.css" />
+<script type="text/javascript"  src="js/common.js?_=9"></script>   
+<script type="text/javascript" src="mescroll/mescroll.min.js?_=9"></script>   
+<script type="text/javascript" src="//static.gunqiu.com/static/swiper.min.js?_=9"></script> 
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js?_=9"></script> 
+<script type="text/javascript"  src="//static.gunqiu.com/static/vue.min.js?_=9"></script>   
+<script src="//static.gunqiu.com/static/vue-resource.min.js?_=9"></script> 
+<script type="text/javascript"  src="js/filter.js?_=9"></script> 
+</head>
+ 
+<body  ontouchstart="">  
+<div class="content" id="app" v-cloak>  
+ <div id="mescroll" class="mescroll" ref="wrapper">
+        <div id="loading" v-if="loading"><img src="img/nodate.png" /></div>  
+   <div class="tj-banner"> 
+           <div class="swiper-container" id="banner">
+            <div class="swiper-wrapper"> 
+            <div class="swiper-slide"  v-for="v in bannerList" v-on:click="bannerChange(v.linkType,v.url2,v.title,v.tabType,v.extension1,v.extension2,v.content)"> 
+                     	<span> <img :src="v.pic.replace('http://','//')" alt="" /> <em v-if="v.title!=undefined"> {{v.title}}</em> </span> 
+                   </div>  
+				 </div> 
+          <div class="swiper-pagination bannerPagination"></div>
+            </div>
+            </div> 
+  
+    <div class="tj-rank"> 
+        <a  v-on:click="openbill('billboard.html?type=0','tjdtphb')" class="icon1"><i></i> 排行榜</a>
+        <a  v-on:click="openbill('billboard.html?type=1','tjdtphb')" class="icon2"><i></i> 赛事榜</a>
+        <a  v-on:click="openbill('billboard.html?type=2','tjdtphb')" class="icon3"><i></i> 玩法榜</a>
+        <a  v-on:click="openbill('billboard.html?type=3','tjdtphb')" class="icon4"><i></i> 人气榜</a>   
+        <a  v-on:click="openhot('speciallist-red.html','连红榜','tjdtgdzj')" class="icon5"><i></i> 连红榜</a>   
+     <!--   <a  v-on:click="opentap('tj',2,'tjdtyp')" class="icon2"><i></i> 让球</a>
+        <a  v-on:click="opentap('tj',3,'tjdtdxq')" class="icon3"><i></i> 进球数</a>
+        <a  v-on:click="opentap('tj',1,'tjdtspf')" class="icon1"><i></i> 胜平负</a>
+        <a  v-on:click="openfollow('follow')"  class="icon5"><i></i> 我的关注</a>-->
+    </div> 
+     <div class="tj-hottit"><i class="line"></i> <span>专家推荐</span> <a  v-on:click="openbill('speciallist-hots.html?type=0','tjdtgdzj')">更多 ></a></div>
+    <div class="tjTab" v-if="index==0"> <span :class="tab==0?'dq':''" v-on:click="tabChange(0)">热门专家</span> <span :class="tab==1?'dq':''" v-on:click="tabChange(1)">热销专家</span>   </div>
+    <div class="tjTab" v-else> <span :class="tab==1?'dq':''" v-on:click="tabChange(1)">热销专家</span> <span :class="tab==0?'dq':''" v-on:click="tabChange(0)">热门专家</span> </div>
+    <div class="tj-hot" :class="tab==0?'':'visibility'"> 
+        <div class="swiper-container" id="hot">
+            <div class="swiper-wrapper"> 
+			      <div class="swiper-slide" v-for="v in hotList">
+					  <ul>  
+						  <li v-for="vk in v"  v-on:click="opennative('userinfo',vk.userid,vk.nickName,'tjdtzjtx')">  
+                                 <img :src="'https://mobile.gunqiu.com/avatar/'+vk.userid+'?size=!100px'"  />
+                                  <span>{{vk.nickName | sbsname(5)}}</span>   
+						       <em class="day-count" v-if="vk.dayRecommend>0">{{vk.dayRecommend}}</em> 
+                               <em class="level-pic" v-if="vk.level>0">  <img :src="'img/level_'+vk.level+'.png'"  /></em>  
+                               <em class="lian-count" v-if="vk.red>0">正在{{vk.red}}连红</em>   
+                           </li>    
+					 </ul> 
+			      </div>   
+           </div> 
+          <div class="swiper-pagination hotPagination"></div>
+        </div>  
+    </div>   
+     <div class="tj-hot" :class="tab==1?'':'visibility'"> 
+        <div class="swiper-container" id="sale">
+            <div class="swiper-wrapper"> 
+			      <div class="swiper-slide" v-for="v in saleList">
+					  <ul>  
+						  <li v-for="vk in v"  v-on:click="opennative('userinfo',vk.userId,vk.nickName,'tjdtzjtx')"> 
+                                 <img :src="'https://mobile.gunqiu.com/avatar/'+vk.userId+'?size=!100px'"  />
+                                  <span>{{vk.nickname | sbsname(5)}}</span>   
+						       <em class="day-count" v-if="vk.reccommendCount>0">{{vk.reccommendCount}}</em> 
+                                <em class="lian-count">{{vk.salesCount}}人购买</em>  
+                           </li>    
+					 </ul> 
+			      </div>   
+           </div> 
+          <div class="swiper-pagination salePagination"></div>
+        </div> 
+    </div> 
+    <div class="tj-hottit bot-line" v-if="redList.length>0"><i class="line"></i> <span>正在连红</span> <a v-on:click="openhot('speciallist-red.html','连红榜','tjdtgdzj')">更多 ></a></div>
+    <div class="tj-hot" v-if="redList.length>0"> 
+        <div class="swiper-container" id="red">
+            <div class="swiper-wrapper"> 
+			      <div class="swiper-slide" v-for="v in redList"> 
+					  <ul>   
+						  <li v-for="vk in v"  v-on:click="opennative('userinfo',vk.userId,vk.nickName,'tjdtzjtx')"> 
+                               <img :src="'https://mobile.gunqiu.com/avatar/'+vk.userId+'?size=!100px'"  /> 
+                               <span>{{vk.nickname | sbsname(5)}}</span>   
+						       <em class="day-count" v-if="vk.reccommendCount>0">{{vk.reccommendCount}}</em> 
+                               <em class="lian-count">正在{{vk.red}}连红</em>  
+                           </li>    
+					 </ul> 
+			      </div>  
+           </div> 
+          <div class="swiper-pagination redPagination"></div>
+        </div> 
+        
+    </div> 
+    
+    <div class="tj-hot-mode"> 
+       <span v-for="v in modeList" :class="v.classname" v-on:click="openMode(v.type)"></span>   
+      </div>
+    <div class="tj-hottit noradius"><i class="line"></i> <span>热门推荐</span> <a  v-on:click="opennative('tj','','','tjdtgdtj')">查看全部 ></a></div>
+    <div class="tj whitebg">   
+    <div class="nohotdata" v-show="isShow"> <img src="img/nohotdata.png" alt="" /> <span>今日暂无热门推荐！</span></div>
+    <ul  v-for="(v,key) in list" :class="key>0?'shadow':''">
+         <li class="usertitle"  v-on:click="opennative('userinfo',v.userId,v.nickName,'tjdtzjtx')"> 
+               <span class="username"><img :src="'https://mobile.gunqiu.com/avatar/'+v.userId+'?size=!100px'" class="pics">  <em v-if="v.level>0"> <img :src="'img/level_'+v.level+'.png'" alt=""></em>  </span>
+                <span class="usermark">
+                 <i  :class="v.playWinRate!='' || v.sclassWinRate!='' || v.red>1 || v.sclassRed>1 ? 'nickname' : 'nickname h' ">  
+                    <em class="name">{{v.nickName}}</em>  <em class="line"></em> <em class="mr-10">{{v.levelName}}</em> 
+                    <em class="pic" v-if="v.weekChampionCount>0"><img src="img/rank-week.png" alt=""> {{v.weekChampionCount}}</em> 
+                    <em class="pic" v-if="v.monthChampionCount>0"><img src="img/rank-month.png" alt=""> {{v.monthChampionCount}}</em> 
+                 </i> 
+                 <i class="playmark">  
+                     <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
+                    <template v-if="v.sclassWinRate!=''">   {{v.goodSclass}}: <em>{{v.sclassWinRate}}%</em>  </template>
+                    <template v-if="v.playWinRate!=''">   
+                        <template v-if="v.goodPlay==1">胜平负</template> 
+                        <template v-else-if="v.goodPlay==2">让球</template>  
+                        <template v-else>进球数</template>: <em>{{v.playWinRate}}%</em>  
+                    </template> 
+                  </i> 
+               </span>  
+			   <span class="remark1" v-if="v.tenWinRate>0">    <i><em class="font-20">{{v.tenWinRate}}%</em></i> 近10场胜率</span>  
+		    </li>  
+        <li class="contents"  v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">   
+                    <span class="gametime"><i :style="{color:v.leagueColor}">{{v.leagueName}}</i> {{v.matchTime | formatTime("MDHM")}}</span>   
+                    <span class="gameteam">
+                        <b class="teamHome">  {{v.homeTeam | sbsname(6)}}</b>
+						<i class="vs font-500 green-color" v-if="v.matchState>0">{{v.homeScore}}:{{v.guestScore}}</i>
+                        <i class="vs font-500 red-color" v-else-if="v.matchState==-1">{{v.homeScore}}:{{v.guestScore}}</i>
+                        <i class="vs font-500" v-else>vs</i>
+                        <b class="teamAway">  {{v.guestTeam | sbsname(6)}}</b>
+                        </span>
+                      <span class="choices">   推荐玩法:   <i v-if="v.playType==1">  胜平负</i>   <i v-else-if="v.playType==2">  让球</i>   <i v-else> 进球数</i>  </span>   
+                     <span class="tj-yuan tops" v-if="v.canSee"> 
+                          <template  v-if="v.recommendResult!=''"> 
+                           <img v-if="v.recommendResult=='2'" src="img/guan-2-03.png" />
+                           <img v-else-if="v.recommendResult=='1'" src="img/guan-2-06.png" alt="" /> 
+                           <img v-else-if="v.recommendResult=='-2'" src="img/guan-2-02.png" alt="" /> 
+                           <img v-else-if="v.recommendResult=='-1'" src="img/guan-2-08.png" alt="" /> 
+                           <img v-else-if="v.recommendResult=='0'" src="img/guan-2-04.png" alt="" />
+                           <img v-else-if="v.recommendResult=='10'" src="img/guan-2-10.png" alt="" />
+                           <img v-else-if="v.recommendResult=='-3'" src="img/guan-2-01.png" alt="" />  
+                           </template> 
+                    </span>	  
+                <span class="playmoney tops" v-else> <em></em> {{v.amount/100}}钻石  </span> 
+                </li>   
+		  <li class="pinglun"  v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">     	
+             <i class="time"> <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  </i> 	
+             <i class="readcount"><img src="img/look.png" alt=""> {{v.readCount}}</i> 
+            <span v-if="v.amount>0">  <i class="paycount"><img src="img/paycount.png" alt=""> {{v.buyCount}}人购买</i>   </span>  
+           </li>  
+	 </ul>  
+ </div>
+ <!-- <div class="cjmore" v-on:click="opennative('tj','','','tjdtgdtj')">查看更多推荐 <i></i> </div>  -->
+ </div>
+ <!-- <div class="tj-edit" v-on:click="fabuTj()"></div>-->
+ </div> 
+ 
+<script type="text/javascript"  src="js/tuijianIndex.js?_=9"></script> 
+<script>
+	FastClick.attach(document.body);
+  document.body.addEventListener('touchstart',function(){},false);
+</script>
+</body>
+</html>
