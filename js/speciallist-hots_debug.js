@@ -53,7 +53,6 @@ function vv(token, userId, platform) {
         created: function() {
             var urlparam = location.search.replace('?', '');
             var type = urlparam.split('type=')[1];
-            type = 1
             this.index = type
             this.salePage()
             this.redPage()
