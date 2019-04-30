@@ -584,7 +584,7 @@ button {
 .bigtitle {
     width: 100%;
     float: left;
-    background: #DB2D21;
+    background: #2a4072;
     color: #fff;
     position: relative;
 }
@@ -852,7 +852,7 @@ button {
     width: 100%;
     float: left;
     height: 44px;
-    background: #DB2D21;
+    background: #2a4072;
     text-align: center;
     position: relative;
 }
@@ -864,7 +864,7 @@ button {
     line-height: 36px;
     color: #fff;
     font-size: 1.6em;
-    border-bottom: 2px solid #DB2D21;
+    border-bottom: 2px solid #2a4072;
     opacity: 0.6;
 }
 
@@ -879,13 +879,13 @@ button {
     width: auto;
     height: auto;
     border-radius: 0;
-    background: #DB2D21;
+    background: #2a4072;
     opacity: 0.6;
     font-size: 1.6em;
 }
 
 .navmsg .swiper-pagination-bullet-active {
-    background: #DB2D21;
+    background: #2a4072;
     color: #fff;
     border-bottom: 2px solid #fff;
     opacity: 1;
@@ -9264,7 +9264,7 @@ ul.tabs li.default a i {
     width: 100%;
     float: left;
     height: 44px;
-    background: #DB2D21 ;
+    background: #2a4072 ;
     text-align: center;
     position: relative;
 }
@@ -9289,14 +9289,14 @@ ul.tabs li.default a i {
     width: auto;
     height: auto;
     border-radius: 0;
-    background: #DB2D21 ;
+    background: #2a4072 ;
     opacity: 1;
     font-size: 1.6em;
     color: #DCDCDC;
 }
 
 .special-nav .swiper-pagination-bullet-active {
-    background: #DB2D21 ;
+    background: #2a4072 ;
     color: #fff;
     opacity: 1;
     font-weight: bold;
