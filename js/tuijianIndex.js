@@ -328,7 +328,7 @@ function vv(token,userId){
 				  if(res.code=="200"){ 
 				      var json=res.data
 					  if(json.length>0){ 
-						 this.hotList= this.splitArray(12,json);  
+						 this.hotList= this.splitArray(8,json);  
 				    }else{
 						this.ishot=true
 				   } 
