@@ -399,12 +399,12 @@ button {
 }
 
 .red-bg {
-    background: #F96153;
+    background: #1d50a1;
     color: rgba(0,0,0,1)
 }
 
 .red-color {
-    color: #F96153!important
+    color: #1d50a1!important
 }
 
 .yellow-bg {
@@ -464,7 +464,7 @@ button {
 }
 
 .red-bg1 {
-    background: #F96153;
+    background: #1d50a1;
     color: #fff!important;
 }
 
@@ -691,14 +691,14 @@ button {
 }
 
 .nav a.dq,.nav a:active {
-    color: #F96153;
+    color: #1d50a1;
     font-weight: 600;
 }
 
 .nav a i {
     width: 58px;
     height: 3px;
-    background: #F96153;
+    background: #1d50a1;
     border-radius: 3px;
     display: block;
     margin: 6px auto 0 auto;
@@ -770,7 +770,7 @@ button {
 }
 
 .twoList .swiper-pagination-bullet-active,.fourList .swiper-pagination-bullet-active {
-    color: #F96153;
+    color: #1d50a1;
     font-weight: 600;
     background: #fff;
     opacity: 1;
@@ -787,8 +787,8 @@ button {
 }
 
 .navlist a {
-    color: #F96153;
-    border: 1px solid #F96153;
+    color: #1d50a1;
+    border: 1px solid #1d50a1;
     border-left: none;
     display: block;
     float: left;
@@ -803,7 +803,7 @@ button {
 .navlist a:first-child {
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
-    border-left: 1px solid #F96153;
+    border-left: 1px solid #1d50a1;
 }
 
 .navlist a:last-child {
@@ -812,7 +812,7 @@ button {
 }
 
 .navlist a.dq {
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
 }
 
@@ -1548,7 +1548,7 @@ p.nodatas {
     line-height: 16px;
     top: 0px;
     left: 55px;
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
     width: 16px;
     height: 16px;
@@ -1561,7 +1561,7 @@ p.nodatas {
     line-height: 16px;
     bottom: 30px;
     left: 0px;
-    background: #F96153;
+    background: #1d50a1;
     border-radius: 100px;
     color: #fff;
     width: 50px;
@@ -1587,7 +1587,7 @@ p.nodatas {
 }
 
 .index-hot .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: #F96153;
+    background: #1d50a1;
     width: 8px;
     height: 1px;
     border-radius: 0px;
@@ -1702,7 +1702,7 @@ p.nodatas {
 
 .index-mode ul li span.time i.rate {
     float: right;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.0em;
     line-height: 30px;
     display: none;
@@ -1770,7 +1770,7 @@ p.nodatas {
 .index-mode ul li span.team span.score i {
     display: block;
     font-size: 1.4em;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .index-mode ul li span.team span.score i.novs {
@@ -1786,7 +1786,7 @@ p.nodatas {
 }
 
 .index-mode ul li span.team span.cansee em {
-    color: #F96153;
+    color: #1d50a1;
     float: left;
     line-height: 25px;
 }
@@ -1797,7 +1797,7 @@ p.nodatas {
     border-radius: 4px;
     line-height: 25px;
     height: 25px;
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
     width: 60px;
     text-align: center;
@@ -1805,7 +1805,7 @@ p.nodatas {
 }
 
 .index-mode ul li span.team span.cansee i.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -1823,7 +1823,7 @@ p.nodatas {
 }
 
 .index-mode ul li span.team span.jiemi.dq {
-    background: #F96153;
+    background: #1d50a1;
     line-height: 25px;
     color: #fff;
     text-align: center;
@@ -1890,7 +1890,7 @@ p.nodatas {
 }
 
 .index-mode ul li span.pic em.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -1910,7 +1910,7 @@ p.nodatas {
 .index-mode ul li span.pic.spf i.pk {
     width: 30px;
     text-align: center;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
     margin-top: 12px;
 }
@@ -1923,11 +1923,11 @@ p.nodatas {
 /*.index-mode ul li span.pic{ float:right; text-align:center; color:#999; } 
 .index-mode ul li span.pic img{ width:44px; height:44px;   position:absolute; top:22px; right:3%;}
 .index-mode ul li span.pic em{ color:#fff; font-size: 1.2em; float:left; border-radius:4px; line-height:22px;height:22px; margin-bottom:2px;background:url(../img/winchoice.png) no-repeat right top #CFD0CF; background-size:10px;width:60px; margin-top:10px;}
-.index-mode ul li span.pic em.big{background:url(../img/winchoice.png) no-repeat right top #F96153;background-size:10px;  } 
+.index-mode ul li span.pic em.big{background:url(../img/winchoice.png) no-repeat right top #1d50a1;background-size:10px;  } 
 .index-mode ul li span.pic em.sma{background:url(../img/winchoice.png) no-repeat right top #68CE5D;background-size:10px;  }
 .index-mode ul li span.pic.spf img{margin-right:2px;} 
 .index-mode ul li span.pic.spf i {float:left; }
-.index-mode ul li span.pic.spf i.pk{ width:30px; text-align:center;color:#F96153;font-size: 1.2em;margin-top:12px;  }
+.index-mode ul li span.pic.spf i.pk{ width:30px; text-align:center;color:#1d50a1;font-size: 1.2em;margin-top:12px;  }
 .index-mode ul li span.pic.spf i em{ margin-right:2px; width:50px;}*/
 .index-mode ul li span.pic.mt {
     margin-top: 8px;
@@ -2024,7 +2024,7 @@ dd>h3 span.check i.dq em {
     width: 16px;
     height: 16px;
     border-radius: 2px;
-    background: #F96153;
+    background: #1d50a1;
     border: 1px solid #ddd;
     margin-top: 10px;
     margin-left: 0;
@@ -2123,7 +2123,7 @@ dd>h3 span.checkcount i:last-child {
 }
 
 .zhsl ul li span.count i:first-child {
-    background: #F96153;
+    background: #1d50a1;
     border-right: 3px solid #fff;
 }
 
@@ -2231,10 +2231,10 @@ dd>h3 span.checkcount i:last-child {
 .lsjf ul li span.imgs{ width:100%; height:28px;float:left; position:relative; margin-top:10px;}
 .lsjf ul li span.text{ width:100%; font-size:1.2em; text-align:center; color:#333;float:left; margin-top:10px;}
 .lsjf ul li  span.imgs  i{ position:absolute; bottom:0;  width:100%; display:block;}
-.lsjf ul li.wins span.imgs  i{ border-top:2px solid #F96153;  background:#fadad6}
+.lsjf ul li.wins span.imgs  i{ border-top:2px solid #1d50a1;  background:#fadad6}
 .lsjf ul li.ping span.imgs i{ border-top:2px solid #4285F4; background:#dce7f8}
 .lsjf ul li.lose span.imgs i{ border-top:2px solid #34A853;   background:#c3f4ce}
-.lsjf ul li.wins span.count{ color:#F96153;}
+.lsjf ul li.wins span.count{ color:#1d50a1;}
 .lsjf ul li.ping span.count{ color:#4285F4;}
 .lsjf ul li.lose span.count{ color:#34A853;}*/
 .jfcount {
@@ -2430,7 +2430,7 @@ dd>h3 span.checkcount i:last-child {
 }
 
 .st-list ul.home .count {
-    background: #F96153;
+    background: #1d50a1;
     margin-left: 10px
 }
 
@@ -2570,7 +2570,7 @@ dd>h3 span.checkcount i:last-child {
 
 .zstable i.yi,.zstable i.zhu {
     display: block;
-    background: #F96153;
+    background: #1d50a1;
     width: 15px;
     height: 15px;
     line-height: 15px;
@@ -2706,7 +2706,7 @@ dd>h3 span.checkcount i:last-child {
 
 .zstables i.yi,.zstable i.zhu {
     display: block;
-    background: #F96153;
+    background: #1d50a1;
     width: 15px;
     height: 15px;
     line-height: 15px;
@@ -2771,7 +2771,7 @@ dd>h3 span.checkcount i:last-child {
 
 .zstable tr i.yi,.zstable tr i.zhu {
     display: block;
-    background: #F96153;
+    background: #1d50a1;
     width: 15px;
     height: 15px;
     line-height: 15px;
@@ -3283,7 +3283,7 @@ dd>h3 span.checkcount i:last-child {
 }
 
 .zbe-list ul li span.count i:first-child {
-    background: #F96153;
+    background: #1d50a1;
 }
 
 .zblist,.zblist ul {
@@ -3513,7 +3513,7 @@ em.yellowRedCard {
 }
 
 .zhibotj ul li span.count i:first-child {
-    background: #F96153;
+    background: #1d50a1;
     border-right: 2px solid #fff;
 }
 
@@ -3601,7 +3601,7 @@ em.yellowRedCard {
 .zr-list ul li .count {
     color: #999;
     margin-right: 5px;
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
     width: 14px;
     height: 14px;
@@ -3790,7 +3790,7 @@ em.yellowRedCard {
 
 .qbsee ul li span.count {
     float: left;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.3em;
     margin-top: 20px;
 }
@@ -4140,7 +4140,7 @@ em.yellowRedCard {
 }
 
 .tjTab span.dq {
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
 }
 
@@ -4212,7 +4212,7 @@ em.yellowRedCard {
     line-height: 16px;
     top: 0px;
     left: 57%;
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
     width: 16px;
     height: 16px;
@@ -4225,7 +4225,7 @@ em.yellowRedCard {
     line-height: 16px;
     bottom: 25px;
     left: 0px;
-    background: #F96153;
+    background: #1d50a1;
     border-radius: 100px;
     color: #fff;
     width: 64px;
@@ -4408,7 +4408,7 @@ em.yellowRedCard {
     font-size: 1.4em;
     line-height: 28px;
     padding: 0 10px;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .tjmode ul li span.tit i.rate {
@@ -4420,7 +4420,7 @@ em.yellowRedCard {
 .tjmode ul li span.tit i.rate em {
     display: block;
     font-size: 1.4em;
-    color: #F96153;
+    color: #1d50a1;
     line-height: 22px;
     font-weight: bold
 }
@@ -4466,14 +4466,14 @@ em.yellowRedCard {
     line-height: 20px;
     text-align: center;
     color: #fff;
-    background: url(../img/winchoice.png) no-repeat top right #F96153;
+    background: url(../img/winchoice.png) no-repeat top right #1d50a1;
     background-size: 10px;
     border-radius: 5px;
     display: inline-block;
 }
 
 .tjmode ul li span.cansee i.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -4498,7 +4498,7 @@ em.yellowRedCard {
     line-height: 22px;
     text-align: center;
     color: #fff;
-    background: url(../img/winchoice.png) no-repeat top right #F96153;
+    background: url(../img/winchoice.png) no-repeat top right #1d50a1;
     background-size: 10px;
     border-radius: 5px;
     float: left;
@@ -4507,7 +4507,7 @@ em.yellowRedCard {
 
 .tjmode ul li span.cansee1 em {
     float: left;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
     line-height: 22px;
     padding-right: 5px;
@@ -4583,7 +4583,7 @@ em.yellowRedCard {
 }
 
 .tjmode ul li span.pic em.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -4599,7 +4599,7 @@ em.yellowRedCard {
 .tjmode ul li span.pic.spf i.pk {
     width: 30px;
     text-align: center;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
     margin-top: 12px;
 }
@@ -4716,7 +4716,7 @@ em.yellowRedCard {
 }
 
 .tj ul li.usertitle span.usermark i.lian {
-    background: #F96153;
+    background: #1d50a1;
     display: inline-block;
     height: 20px;
     color: #fff;
@@ -4726,7 +4726,7 @@ em.yellowRedCard {
 }
 
 .tj ul li.usertitle span.usermark i.tx {
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
     border-radius: 10px;
     padding: 0 5px;
@@ -4913,7 +4913,7 @@ em.yellowRedCard {
 
 @keyframes heart {
     0% {
-        background: #F96153;
+        background: #1d50a1;
     }
 
     50% {
@@ -4921,7 +4921,7 @@ em.yellowRedCard {
     }
 
     100% {
-        background: #F96153;
+        background: #1d50a1;
     }
 }
 
@@ -5088,7 +5088,7 @@ em.yellowRedCard {
 
 .cjti-replayName .zj {
     background: #fee3e1;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.0em;
     border-radius: 3px;
     padding: 0 3px;
@@ -5242,7 +5242,7 @@ em.yellowRedCard {
 .navtitle1 a i {
     width: 5px;
     height: 5px;
-    border: 1px solid #F96153;
+    border: 1px solid #1d50a1;
     border-radius: 6px;
     background: #fff;
     display: inline-block;
@@ -5309,7 +5309,7 @@ em.yellowRedCard {
 
 .cjlist span i {
     display: block;
-    color: #F96153;
+    color: #1d50a1;
     font-family: 'myFirstFont', sans-serif;
     font-weight: bold;
     font-size: 2.0em;
@@ -5344,7 +5344,7 @@ em.yellowRedCard {
 }
 
 .changlist a.dq i {
-    background: #F96153;
+    background: #1d50a1;
 }
 
 ul.tabs {
@@ -5371,7 +5371,7 @@ ul.tabs li a i {
 }
 
 ul.tabs li.default a i {
-    background: #F96153;
+    background: #1d50a1;
 }
 
 .cjcol .swiper-pagination {
@@ -5470,7 +5470,7 @@ ul.tabs li.default a i {
 }
 
 .cjlian i em,.cjbang i em {
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .cjbang {
@@ -6314,7 +6314,7 @@ ul.tabs li.default a i {
 }
 
 .pl-tit span.dq {
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .plList {
@@ -6915,7 +6915,7 @@ ul.tabs li.default a i {
 .blList .plchange em {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 30px;
-    color: #F96153
+    color: #1d50a1
 }
 
 /*模型*/
@@ -7061,7 +7061,7 @@ ul.tabs li.default a i {
 .mode-index ul li span.team span.score i {
     display: block;
     font-size: 1.3em;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .mode-index ul li span.team span.score i.novs {
@@ -7077,7 +7077,7 @@ ul.tabs li.default a i {
 }
 
 .mode-index ul li span.team span.cansee em {
-    color: #F96153;
+    color: #1d50a1;
     float: left;
     line-height: 25px;
 }
@@ -7088,7 +7088,7 @@ ul.tabs li.default a i {
     border-radius: 4px;
     line-height: 25px;
     height: 25px;
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
     width: 60px;
     text-align: center;
@@ -7096,7 +7096,7 @@ ul.tabs li.default a i {
 }
 
 .mode-index ul li span.team span.cansee i.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -7114,7 +7114,7 @@ ul.tabs li.default a i {
 }
 
 .mode-index ul li span.team span.jiemi.dq {
-    background: #F96153;
+    background: #1d50a1;
     line-height: 25px;
     color: #fff;
     text-align: center;
@@ -7181,7 +7181,7 @@ ul.tabs li.default a i {
 }
 
 .mode-index ul li span.pic em.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -7199,7 +7199,7 @@ ul.tabs li.default a i {
 .mode-index ul li span.pic.spf i.pk {
     width: 30px;
     text-align: center;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
     margin-top: 12px;
 }
@@ -7285,7 +7285,7 @@ ul.tabs li.default a i {
 .mode-banner {
     width: 100%;
     float: left;
-    background: #F96153;
+    background: #1d50a1;
     position: relative;
 }
 
@@ -7415,7 +7415,7 @@ ul.tabs li.default a i {
 
 .dxtop a {
     float: right;
-    background: #F96153 ;
+    background: #1d50a1 ;
     padding: 0 8px;
     line-height: 25px;
     border-radius: 15px;
@@ -7493,7 +7493,7 @@ ul.tabs li.default a i {
 
 .nearSclass1 i {
     float: left;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
     padding-left: 10px;
 }
@@ -7587,7 +7587,7 @@ ul.tabs li.default a i {
 }
 
 .nearlist ul li em.count {
-    color: #F96153;
+    color: #1d50a1;
     font-family: 'myFirstFont', sans-serif;
     font-weight: bold;
     font-size: 1.8em;
@@ -7724,8 +7724,8 @@ ul.tabs li.default a i {
 }
 
 .sclasslink a {
-    border: 1px solid #F96153;
-    color: #F96153;
+    border: 1px solid #1d50a1;
+    color: #1d50a1;
     border-radius: 15px;
     float: left;
     font-size: 1.2em;
@@ -7773,7 +7773,7 @@ ul.tabs li.default a i {
 }
 
 .hitRate ul li em.count {
-    color: #F96153;
+    color: #1d50a1;
     font-family: 'myFirstFont', sans-serif;
     font-weight: bold;
     font-size: 3.0em;
@@ -8060,7 +8060,7 @@ ul.tabs li.default a i {
 .modenew ul li span.team span.score i {
     display: block;
     font-size: 1.4em;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .modenew ul li span.team span.score i.novs {
@@ -8084,13 +8084,13 @@ ul.tabs li.default a i {
     border-radius: 4px;
     line-height: 22px;
     height: 22px;
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
     margin-bottom: 2px;
 }
 
 .modenew ul li span.team span.cansee em.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -8164,7 +8164,7 @@ ul.tabs li.default a i {
 }
 
 .modenew ul li span.pic em.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -8258,7 +8258,7 @@ ul.tabs li.default a i {
 }
 
 .yuce span.button em.dq {
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
 }
 
@@ -8551,7 +8551,7 @@ ul.tabs li.default a i {
     display: inline-block;
     float: none;
     height: 28px;
-    background: url(../img/shape.png) no-repeat 10px center #F96153;
+    background: url(../img/shape.png) no-repeat 10px center #1d50a1;
     background-size: 14px;
     border-radius: 100px;
     margin-top: 10px;
@@ -8591,7 +8591,7 @@ ul.tabs li.default a i {
 
 .modelist ul li span.time i.rate {
     float: right;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.0em;
     line-height: 20px;
     display: none;
@@ -8636,7 +8636,7 @@ ul.tabs li.default a i {
 .modelist ul li span.team span.score i {
     display: block;
     font-size: 1.4em;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .modelist ul li span.team span.score i.novs {
@@ -8652,7 +8652,7 @@ ul.tabs li.default a i {
 }
 
 .modelist ul li span.team span.cansee em {
-    color: #F96153;
+    color: #1d50a1;
     float: left;
     line-height: 25px;
 }
@@ -8663,7 +8663,7 @@ ul.tabs li.default a i {
     border-radius: 4px;
     line-height: 25px;
     height: 25px;
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
     width: 50px;
     text-align: center;
@@ -8683,7 +8683,7 @@ ul.tabs li.default a i {
     border-radius: 4px;
     line-height: 25px;
     height: 25px;
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
     width: 60px;
     text-align: center;
@@ -8707,7 +8707,7 @@ ul.tabs li.default a i {
 }
 
 .modelist ul li span.team span.jiemi.dq {
-    background: #F96153;
+    background: #1d50a1;
     line-height: 25px;
     color: #fff;
     text-align: center;
@@ -8772,7 +8772,7 @@ ul.tabs li.default a i {
 }
 
 .modelist ul li span.pic em.big {
-    background: url(../img/winchoice.png) no-repeat right top #F96153;
+    background: url(../img/winchoice.png) no-repeat right top #1d50a1;
     background-size: 10px;
 }
 
@@ -8788,7 +8788,7 @@ ul.tabs li.default a i {
 .modelist ul li span.pic.spf i.pk {
     width: 30px;
     text-align: center;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
     margin-top: 12px;
 }
@@ -8810,7 +8810,7 @@ ul.tabs li.default a i {
 }
 
 /*.modelist ul li span.pic.spf i{width:60px;float:left; }
-.modelist ul li span.pic.spf i.pk{ width:30px; text-align:center;color:#F96153;font-size: 1.2em;margin-top:12px;  }
+.modelist ul li span.pic.spf i.pk{ width:30px; text-align:center;color:#1d50a1;font-size: 1.2em;margin-top:12px;  }
 .modelist ul li span.pic.spf i em{ margin-bottom:2px; margin-top:0;width:60px;}*/
 .modelist ul li span.pic.mt-8 {
     margin-top: 8px;
@@ -9068,7 +9068,7 @@ ul.tabs li.default a i {
 
 #payfor span i {
     display: block;
-    color: #F96153;
+    color: #1d50a1;
     line-height: 45px;
     font-size: 1.4em;
 }
@@ -9106,7 +9106,7 @@ ul.tabs li.default a i {
     color: #333;
     font-size: 1.4em;
     line-height: 60px;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .modelist1 {
@@ -9191,7 +9191,7 @@ ul.tabs li.default a i {
 .modelist1 ul li span.more {
     float: left;
     width: 62px;
-    background: #F96153 ;
+    background: #1d50a1 ;
     font-size: 1.4em;
     color: #fff;
     line-height: 30px;
@@ -9759,7 +9759,7 @@ ul.tabs li.default a i {
     width: 16px;
     height: 16px;
     border-radius: 16px;
-    background: #F96153;
+    background: #1d50a1;
     font-size: 0.8em;
     color: #fff!important;
     line-height: 16px;
@@ -9929,7 +9929,7 @@ ul.tabs li.default a i {
 
 .special-hot ul li span i.playmark em {
     display: inline-block;
-    color: #F96153;
+    color: #1d50a1;
     margin-right: 5px;
 }
 
@@ -9951,7 +9951,7 @@ ul.tabs li.default a i {
     width: 16px;
     height: 16px;
     border-radius: 16px;
-    background: #F96153;
+    background: #1d50a1;
     font-size: 0.8em;
     color: #fff!important;
     line-height: 16px;
@@ -10156,7 +10156,7 @@ ul.tabs li.default a i {
 
 .purchase ul li.contents i.review {
     float: right;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .purchase ul li.contents .gameteam {
@@ -10286,7 +10286,7 @@ ul.tabs li.default a i {
 }
 
 .account-list ul li em.count {
-    color: #F96153;
+    color: #1d50a1;
     float: right;
     margin-right: 5%;
 }
@@ -10517,7 +10517,7 @@ ul.tabs li.default a i {
 
 .gold-buy ul.paygold li span.text1 em {
     font-size: 1.4em;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .gold-buy ul.paygold li span.text2 {
@@ -10528,7 +10528,7 @@ ul.tabs li.default a i {
 .gold-buy ul.paygold li span.text3 {
     width: 80%;
     margin: 0 10%;
-    background: #F96153 ;
+    background: #1d50a1 ;
     border-radius: 5px;
     font-size: 1.4em;
     color: #fff;
@@ -10548,12 +10548,12 @@ ul.tabs li.default a i {
 }
 
 .gold-buy ul.paygold li.dq {
-    border: 1px solid #F96153;
+    border: 1px solid #1d50a1;
     box-shadow: 0 2px 6px 0 rgba(219,45,33,0.30);
 }
 
 .gold-buy ul.paygold li.dq span {
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .gold-buy ul.paygold li.dq span.text3 {
@@ -10659,7 +10659,7 @@ ul.tabs li.default a i {
 }
 
 .showpay .tit1 span.two {
-    color: #F96153;
+    color: #1d50a1;
     float: right;
     font-size: 1.4em;
 }
@@ -10728,7 +10728,7 @@ ul.tabs li.default a i {
 }
 
 .gold-buy ul.paytype li span.cards em {
-    color: #F96153;
+    color: #1d50a1;
     display: block;
 }
 
@@ -10809,7 +10809,7 @@ ul.tabs li.default a i {
 }
 
 .gold-buy .button {
-    background: #F96153 ;
+    background: #1d50a1 ;
     float: left;
     width: 92%;
     margin: 10px 4%;
@@ -10921,13 +10921,13 @@ ul.tabs li.default a i {
 }
 
 .gold-buy ul.paydiamond li.dq {
-    border: 1px solid #F96153;
+    border: 1px solid #1d50a1;
     background: url(../img/diamond-choice.png) no-repeat bottom right #FFF4F4;
     background-size: 12px;
 }
 
 .buttondiamond {
-    background: #F96153 ;
+    background: #1d50a1 ;
     float: left;
     width: 80%;
     margin: 0 10% 20px 10%;
@@ -10990,7 +10990,7 @@ ul.tabs li.default a i {
 
 .gold-top span.coin a {
     font-size: 1.2em;
-    color: #F96153;
+    color: #1d50a1;
     background: #FACFC5;
     display: inline-block;
     margin-top: 5px;
@@ -11070,7 +11070,7 @@ ul.tabs li.default a i {
 .gold-list ul li span em.result {
     display: block;
     font-size: 1.0em;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .gold-list ul li span.last {
@@ -11222,7 +11222,7 @@ ul.tabs li.default a i {
 
 .earnings-top span.coin a {
     font-size: 1.2em;
-    color: #F96153;
+    color: #1d50a1;
     background: #FACFC5;
     display: inline-block;
     margin-top: 5px;
@@ -11302,7 +11302,7 @@ ul.tabs li.default a i {
     text-align: center;
     line-height: 30px;
     font-size: 1.4em;
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
     border-radius: 100px;
 }
@@ -11392,7 +11392,7 @@ ul.tabs li.default a i {
     width: 90%;
     margin: 0 5%;
     text-align: center;
-    background: #F96153;
+    background: #1d50a1;
     border-radius: 4px;
     font-size: 1.6em;
     line-height: 40px;
@@ -11593,7 +11593,7 @@ ul.tabs li.default a i {
     width: 90%;
     margin: 0 5%;
     text-align: center;
-    background: #F96153;
+    background: #1d50a1;
     border-radius: 4px;
     font-size: 1.6em;
     line-height: 40px;
@@ -11658,7 +11658,7 @@ ul.tabs li.default a i {
     width: 6px;
     height: 6px;
     border-radius: 6px;
-    background: #F96153;
+    background: #1d50a1;
 }
 
 .message ul.msg1 li span i.name {
@@ -11735,7 +11735,7 @@ ul.tabs li.default a i {
     width: 6px;
     height: 6px;
     border-radius: 6px;
-    background: #F96153;
+    background: #1d50a1;
     margin-top: 8px;
     margin-right: 8px;
 }
@@ -11809,7 +11809,7 @@ ul.tabs li.default a i {
     width: 6px;
     height: 6px;
     border-radius: 6px;
-    background: #F96153;
+    background: #1d50a1;
 }
 
 .message ul.msg3 li span i.name {
@@ -12217,7 +12217,7 @@ ul.tabs li.default a i {
 }
 
 .bound1 .button.dq {
-    background: #F96153;
+    background: #1d50a1;
     color: #FFFFFF;
 }
 
@@ -12340,7 +12340,7 @@ ul.tabs li.default a i {
 }
 
 .drawbound .button.dq {
-    background: #F96153;
+    background: #1d50a1;
     color: #FFFFFF;
 }
 
@@ -12421,7 +12421,7 @@ ul.tabs li.default a i {
 }
 
 .pay-for ul.paytype li em.dikou {
-    color: #F96153;
+    color: #1d50a1;
     float: left;
     margin-left: 10px;
     line-height: 24px;
@@ -12460,7 +12460,7 @@ ul.tabs li.default a i {
 }
 
 .pay-for ul.paytype li a {
-    background: #F96153;
+    background: #1d50a1;
     font-size: 1.4em;
     color: #fff;
     float: right;
@@ -12475,7 +12475,7 @@ ul.tabs li.default a i {
 }
 
 .pay-for ul.paytype li span.cards em {
-    color: #F96153;
+    color: #1d50a1;
     display: block;
     font-size: 1.0em
 }
@@ -12509,7 +12509,7 @@ ul.tabs li.default a i {
 }
 
 .pay-for .button {
-    background: #F96153;
+    background: #1d50a1;
     float: left;
     width: 92%;
     margin: 40px 4% 0 4%;
@@ -12626,7 +12626,7 @@ ul.tabs li.default a i {
 }
 
 .pay-for .coin span em {
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .pay-for .coin span em.font-20 {
@@ -12704,13 +12704,13 @@ ul.tabs li.default a i {
 }
 
 .payresult span em {
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.2em;
 }
 
 .payresult span.button {
-    color: #F96153;
-    border: 1px solid #F96153;
+    color: #1d50a1;
+    border: 1px solid #1d50a1;
     width: 80px;
     line-height: 40px;
     border-radius: 5px;
@@ -12999,7 +12999,7 @@ ul.tabs li.default a i {
 .addbank span.buttons {
     float: left;
     font-size: 1.6em;
-    background: #F96153;
+    background: #1d50a1;
     color: #fff;
     width: 35%;
     text-align: center;
@@ -13046,7 +13046,7 @@ ul.tabs li.default a i {
 }
 
 .addbank .button.dq {
-    background: #F96153 ;
+    background: #1d50a1 ;
     color: #FFFFFF;
 }
 
@@ -13185,7 +13185,7 @@ ul.banklist li span em {
 }
 
 .navqb1 span.dq {
-    color: #F96153;
+    color: #1d50a1;
     font-weight: bold;
 }
 
@@ -13259,8 +13259,8 @@ ul.banklist li span em {
 }
 
 .fast-list ul li span.team span.time i.icon {
-    border: 1px solid #F96153;
-    color: #F96153;
+    border: 1px solid #1d50a1;
+    color: #1d50a1;
     border-radius: 3px;
     padding: 0 2px;
     line-height: 16px;
@@ -13492,7 +13492,7 @@ ul.banklist li span em {
 }
 
 .board-time em {
-    color: #F96153;
+    color: #1d50a1;
     display: block;
     font-size: 1.2em;
 }
@@ -13509,7 +13509,7 @@ ul.banklist li span em {
 .board-link {
     float: left;
     width: 100%;
-    color: #F96153;
+    color: #1d50a1;
     font-size: 1.4em;
     margin-top: 15px;
     line-height: 25px;
@@ -13586,9 +13586,9 @@ ul.banklist li span em {
     width: 100%;
     text-align: center;
     font-size: 1.6em;
-    color: #F96153;
+    color: #1d50a1;
     line-height: 40px;
-    border-bottom: 1px solid #F96153;
+    border-bottom: 1px solid #1d50a1;
 }
 
 .board-mode p {
@@ -13606,7 +13606,7 @@ ul.banklist li span em {
     width: 100%;
     text-align: center;
     font-size: 1.2em;
-    color: #F96153;
+    color: #1d50a1;
     line-height: 40px;
 }
 
@@ -13805,7 +13805,7 @@ ul.banklist li span em {
 }
 
 .board-tj .play em {
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .board-zan {
@@ -14040,7 +14040,7 @@ ul.banklist li span em {
 
 .board-comment ul li span.text1 span em {
     float: left;
-    color: #F96153;
+    color: #1d50a1;
 }
 
 .board-comment ul li span.dz {
