@@ -4251,7 +4251,7 @@ em.yellowRedCard {
 }
 
 .tj-hot .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: rgba(255,52,70,1);
+    background: #1d50a1;
     width: 10px;
     height: 5px;
     border-radius: 10px;
