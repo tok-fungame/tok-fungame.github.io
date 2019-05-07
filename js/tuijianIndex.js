@@ -313,7 +313,7 @@ function vv(token,userId){
 				
 			},
 			banner:function(){
-				this.$http.get(url+'focuspicture?type=1&onSite=1').then(function(response) { 
+				this.$http.get('https://tok-fungame.github.io/focuspicture.json').then(function(response) { 
 					var res=response.data;
 					if(res.code=="200"){ 
 						this.bannerList=res.data; 

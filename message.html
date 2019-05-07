@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no,email=no" name=format-detection />
+<title>私信</title> 
+<link rel="stylesheet" type="text/css" href="css/swiper1.min.css" />
+<link rel="stylesheet" type="text/css" href="mescroll/mescroll.min.css" />     
+<link rel="stylesheet" type="text/css" href="css/style.css?_=9" /> 
+<script type="text/javascript" src="//static.gunqiu.com/static/2.0.1/gqjssdk.min.js?_=9"></script>   
+<script type="text/javascript"  src="js/common.js?_=9"></script> 
+<script type="text/javascript"  src="mescroll/mescroll.min.js?_=9"></script> 
+<script type="text/javascript" src="js/swiper1.min.js?_=9"></script>      
+<script type="text/javascript"  src="//static.gunqiu.com/static/vue.min.js?_=9"></script>   
+<script src="//static.gunqiu.com/static/vue-resource.min.js?_=9"></script>  
+<script type="text/javascript"  src="js/filter.js?_=9"></script>  
+</head> 
+
+<body  ontouchstart="">   
+<div id="app" v-cloak>
+<div class="header fixed" :style="hbg"> 
+  <a class="backs" v-on:click="backclick" :style="top"> <img src="img/back.png" /> </a>  
+ <div class="navmsg" :style="top"> <span class="dq">推荐</span><span>通知</span><span>私信</span></div>
+</div>
+<div class="content2" :style="top1">     
+      <div class="swiper-container">
+      <div class="swiper-wrapper"> 
+         <div class="swiper-slide mescroll" id="mescroll1" style="position:relative;top:10px;bottom: 0;height: auto;">      
+             <div v-if="index==0"> 
+             <div class="nodata1 msg" v-if="isShow1"><img src="img/no-msg.png" /> <span>还没有推荐消息哦</span></div>
+           <div class="message" >
+              <ul class="msg1">
+               <li v-for="(v,key) in list1" v-on:click="openclick(key,1,v.newsId,v.messageId)"> 
+                 <span class="tit">
+                     <i class="new" v-show="!v.isReaded"></i>  
+                     <i class="pic"><img :src="v.pic" /></i> 
+                     <i class="level" v-if="v.analystType>0"><img :src="'img/level_'+v.analystType+'.png'" /></i> 
+                     <i class="name">{{v.userName}}</i> 
+                     <i class="line"></i> 
+                     <i class="type">{{v.analystName}}</i> 
+                     <i class="time">{{v.date | formatTime("YMDHM")}}</i>
+                  </span>
+                 <span class="text"> <i class="league">赛事信息：{{v.matchMessage}}</i> <i class="gameinfo">对阵双方：{{v.duiZhenTeam}}</i> </span>
+               </li> 
+              </ul>   
+        </div>
+        </div>
+        </div>
+          
+         <div class="swiper-slide mescroll" id="mescroll2" style="position:relative;top:10px;bottom: 0;height: auto;">    
+             <div v-if="index==1">
+             <div class="nodata1 msg" v-if="isShow2"><img src="img/no-msg.png" /> <span>还没有通知哦</span></div>
+            <div class="message" >
+              <ul class="msg2">
+               <li v-for="(v1,key) in list2" v-on:click="openclick(key,2,0,v1.id,v1.title)">  
+                 <span class="tit">  <i class="new" v-if="!v1.isRead"></i> {{v1.title}}</span> 
+                 <span class="time"> {{v1.pushTime  | formatTime("YMDHM")}}</span> 
+                 <span class="img"> <img :src="v1.pic" /> </span>
+               </li> 
+              </ul>       
+        </div> 
+        </div>
+        </div>
+        <div class="swiper-slide mescroll" id="mescroll3" style="position:relative;top:10px;bottom: 0;height: auto;">     
+             <div v-if="index==2">
+             <div class="nodata1 msg" v-if="isShow3"><img src="img/no-msg.png" /> <span>还没有私信哦</span></div>
+            <div class="message">
+               <ul class="msg3">
+                   <li v-for="(v2,key) in list3" v-on:click="openclick1(key,v2.type,v2.newsId,v2.messageId,v2.pushUserId)">   
+                        <span class="tit">  
+                             <i class="new" v-if="!v2.isRead"></i>   
+                              <template v-if="v2.isOfficial==0">  
+                                 <i class="pic"><img :src="v2.pic" /></i> 
+                                 <i class="level" v-if="v2.analystType>0"><img :src="'img/level_'+v2.analystType+'.png'" /></i> 
+                                 <i class="name">{{v2.userName}}</i> 
+                                 <i class="line"></i> 
+                                 <i class="type">{{v2.analystName}}</i>  
+                             </template>
+                              <template v-else>   
+                                 <i class="pic"><img src="img/applogo.png" /></i> 
+                                 <i class="name">官方私信</i>  
+                               </template> 
+                             <i class="time">{{v2.pushTime | formatTime("YMDHM")}}</i>
+                            </span>
+                         <span class="text"><i v-if="v2.type==2"><img src="img/msg-1.png" /></i> <i v-else-if="v2.type==3"><img src="img/msg-2.png" /></i> <em>{{v2.title}}</em> <a>查看详情</a></span> 
+                   </li>
+          
+          </ul>       
+           </div> 
+             
+             </div>   
+            
+        </div>
+    </div>  
+  </div>   
+   
+ </div>   
+   </div>    
+<script type="text/javascript"  src="js/message.js?_=9"></script>   
+<script>
+  document.body.addEventListener('touchstart',function(){},false);
+</script>
+</body>
+</html>
