@@ -4198,8 +4198,8 @@ em.yellowRedCard {
 
 .tj-hot ul li em.level-pic {
     position: absolute;
-    top: 35px;
-    left: 56px;
+    top: 39px;
+    left: 69px;
 }
 
 .tj-hot ul li em.level-pic img {
@@ -4210,8 +4210,8 @@ em.yellowRedCard {
 .tj-hot ul li em.day-count {
     position: absolute;
     line-height: 16px;
-    top: 0px;
-    left: 57%;
+    top: -5px;
+    left: 66%;
     background: #1d50a1;
     color: #fff;
     width: 16px;
