@@ -4122,7 +4122,7 @@ em.yellowRedCard {
 
 .tjTab span {
     display: inline-block;
-    width: 200px;
+    width: 45%;
     text-align: center;
     border: 1px solid #f2f2f2;
     color: #757575;
@@ -9717,7 +9717,7 @@ ul.tabs li.default a i {
 .bill ul li span.other i {
     float: left;
     width: 34%;
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 .bill ul li span.other i:last-child {
