@@ -4757,7 +4757,7 @@ em.yellowRedCard {
     display: inline-block;
     padding: 0 3%;
     margin-top: 5px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 
 .tj ul li.contents .gametime {
