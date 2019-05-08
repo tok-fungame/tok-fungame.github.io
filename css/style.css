@@ -371,7 +371,8 @@ button {
 }
 
 .font-20 {
-    font-size: 2.0em
+    font-size: 2.0em;
+    font-weight: 500;
 }
 
 .font-22 {
@@ -4114,14 +4115,14 @@ em.yellowRedCard {
     float: left;
     text-align: center;
     font-size: 1.2em;
-    line-height: 30px;
+    line-height: 21px;
     background: #fff;
     padding-bottom: 20px;
 }
 
 .tjTab span {
     display: inline-block;
-    width: 90px;
+    width: 200px;
     text-align: center;
     border: 1px solid #f2f2f2;
     color: #757575;
@@ -4184,7 +4185,8 @@ em.yellowRedCard {
 .tj-hot ul li img {
     width: 50px;
     height: 50px;
-    border-radius: 50px;
+    border-radius: 10px;
+    border: 2px #d9d9d9 solid;
 }
 
 .tj-hot ul li span {
@@ -4198,8 +4200,8 @@ em.yellowRedCard {
 
 .tj-hot ul li em.level-pic {
     position: absolute;
-    top: 39px;
-    left: 69px;
+    top: 36px;
+    left: 68px;
 }
 
 .tj-hot ul li em.level-pic img {
@@ -4747,6 +4749,7 @@ em.yellowRedCard {
 .tj ul li.contents {
     line-height: 20px;
     position: relative;
+    /* left: 20px; */
 }
 
 .tj ul li.contents span.gametime,.tj ul li.contents span.gameteam,.tj ul li.contents span.choices {
@@ -4754,6 +4757,7 @@ em.yellowRedCard {
     display: inline-block;
     padding: 0 3%;
     margin-top: 5px;
+    margin-left: 20px;
 }
 
 .tj ul li.contents .gametime {
