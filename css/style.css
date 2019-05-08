@@ -4076,18 +4076,18 @@ em.yellowRedCard {
 
 .tj-hottit i.line {
     float: left;
-    width: 2px;
+    width: 7px;
     height: 16px;
-    background: #FF7D8D;
+    background: #7f8998;
     margin-left: 10px;
     margin-top: 12px;
 }
 
 .tj-hottit span {
-    font-size: 1.4em;
+    font-size: 2em;
     font-weight: bold;
     float: left;
-    color: #333;
+    color: #0b2e64;
     padding-left: 10px;
 }
 
