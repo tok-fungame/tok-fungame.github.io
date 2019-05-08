@@ -5316,12 +5316,19 @@ em.yellowRedCard {
     color: #1d50a1;
     font-family: 'myFirstFont', sans-serif;
     font-weight: bold;
-    font-size: 2.0em;
+    font-size: 2.5em;
     line-height: 32px;
+    letter-spacing: -2px;
+}
+
+.cjlist span:last-child i {
+    font-size: 1.66em;
 }
 
 .cjlist span:last-child {
     border: 0;
+    color: #b00000;
+    font-size: 1.5em;
 }
 
 .changlist {
@@ -5526,7 +5533,7 @@ ul.tabs li.default a i {
 }
 
 .zoushi span {
-    margin-right: -8px;
+    margin-right: 2px;
 }
 
 .zoushi span img {
