@@ -472,7 +472,7 @@ button {
 .bigtitle {
     width: 100%;
     float: left;
-    background: #2a4072;
+    background: #FF8E00;
     color: #fff;
     position: relative;
 }
@@ -697,7 +697,7 @@ button {
     width: 100%;
     float: left;
     height: 44px;
-    background: #2a4072;
+    background: #FF8E00;
     text-align: center;
     position: relative;
 }
@@ -708,7 +708,7 @@ button {
     line-height: 36px;
     color: #fff;
     font-size: 1.6em;
-    border-bottom: 2px solid #2a4072;
+    border-bottom: 2px solid #FF8E00;
     opacity: 0.6;
 }
 .navmsg span.dq {
@@ -721,12 +721,12 @@ button {
     width: auto;
     height: auto;
     border-radius: 0;
-    background: #2a4072;
+    background: #FF8E00;
     opacity: 0.6;
     font-size: 1.6em;
 }
 .navmsg .swiper-pagination-bullet-active {
-    background: #2a4072;
+    background: #FF8E00;
     color: #fff;
     border-bottom: 2px solid #fff;
     opacity: 1;
@@ -3692,7 +3692,7 @@ em.yellowRedCard {
     width: 94%;
     float: left;
     margin-bottom: 5px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     margin-left: 3%;
 }
 .tj ul.shadow {
@@ -7951,7 +7951,7 @@ ul.tabs li.default a i {
     width: 100%;
     float: left;
     height: 44px;
-    background: #2a4072;
+    background: #FF8E00;
     text-align: center;
     position: relative;
 }
@@ -7973,13 +7973,13 @@ ul.tabs li.default a i {
     width: auto;
     height: auto;
     border-radius: 0;
-    background: #2a4072;
+    background: #FF8E00;
     opacity: 1;
     font-size: 1.6em;
     color: #DCDCDC;
 }
 .special-nav .swiper-pagination-bullet-active {
-    background: #2a4072;
+    background: #FF8E00;
     color: #fff;
     opacity: 1;
     font-weight: bold;
@@ -8413,7 +8413,7 @@ ul.tabs li.default a i {
 .special-hot {
     width: 100%;
     float: left;
-    background: #fff;
+    /*background: #fff;*/
 }
 .special-hot ul li {
     width: 100%;
@@ -8422,6 +8422,7 @@ ul.tabs li.default a i {
     padding-top: 10px;
     position: relative;
     border-bottom: 1px solid #f2f2f2;
+    background: #fff;
 }
 .special-hot ul li span.fouced:active {
     background: #f2f2f2;
