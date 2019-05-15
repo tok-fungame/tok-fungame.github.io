@@ -1,33 +1,35 @@
- var vum="";
+var vum = "";
  gq.ready(function(){
-	//获取token 
-	var token="",userId=""
-	gq.getToken(function(res){ 
-		if(res.token!=null){  
-		  token=res.token
-			gq.info(function(res){  
-			    userId=res.userId; 
-				platform=res.platform   
-				vv(token,userId,platform)
-			})
-		}   
+//获取token 
+var token = ""
+  , userId = ""
+ gq.getToken(function(res){ 
+     if(res.token!=null){  
+       token=res.token
+         gq.info(function(res){  
+             userId=res.userId; 
+             platform=res.platform  
+platform = 0;
+vv(token, userId, platform)
+         })
+     }   
    })  
-   gq.addEventListener("reload",function(){ 
-	       gq.getToken(function(res){  
-				if(res.token!=null){  
-					 vum.token=res.token   
-					 gq.info(function(res){  
-						 vum.userId=res.userId;   
-					  })
-				}else{ 
-					 vum.token=""
-				 }   
-			  Vue.http.headers.common['token'] = vum.token
-			  vum.limitStart=0
-			  vum.limitStart1=0 
-		  });  
-   }) 
-})  
+gq.addEventListener("reload", function() {
+    gq.getToken(function(res) {
+        if (res.token != null) {
+            vum.token = res.token
+            gq.info(function(res) {
+                vum.userId = res.userId;
+            })
+        } else {
+            vum.token = ""
+        }
+        Vue.http.headers.common['token'] = vum.token
+        vum.limitStart = 0
+        vum.limitStart1 = 0
+    });
+})
+// })  
 function vv(token, userId, platform) {
     Vue.http.headers.common['token'] = token
     vum = new Vue({
@@ -341,37 +343,38 @@ function vv(token, userId, platform) {
                     }
                 }
                 gq.open(datas);
+            },
+            openMode:function(val){   
+                var h5url="",title=""  
+                if(val==1){
+                    h5url="spfmode.html";
+                    title="临场胜平负"   
+                }else if(val==4){
+                    h5url="cpspfmode.html"; 
+                    title="初始胜平负"     
+                }else if(val==2){
+                    h5url="yamode.html";  
+                    title="临场亚指"      
+                }else if(val==5){
+                    h5url="cpyamode.html"; 
+                    title="初始亚指"      
+                }else if(val==3){
+                    h5url="dxmode.html";   
+                    title="八维指数"     
+                }else{
+                    h5url="blmode.html";   
+                    title="高赔爆冷"     
+                }
+                var datas={ 
+                    title:"",
+                    url:linkurl+h5url,
+                    nav_hidden:true 
+                }   
+                gq.openH5(datas) 
             }
 
-        },
-        openMode:function(val){   
-				var h5url="",title=""  
-				if(val==1){
-					h5url="spfmode.html";
-					title="临场胜平负"   
-				}else if(val==4){
-					h5url="cpspfmode.html"; 
-					title="初始胜平负"     
-				}else if(val==2){
-					h5url="yamode.html";  
-					title="临场亚指"      
-				}else if(val==5){
-					h5url="cpyamode.html"; 
-					title="初始亚指"      
-				}else if(val==3){
-					h5url="dxmode.html";   
-					title="八维指数"     
-				}else{
-					h5url="blmode.html";   
-					title="高赔爆冷"     
-				}
-				var datas={ 
-					title:"",
-					url:linkurl+h5url,
-					nav_hidden:true 
-				}   
-				gq.openH5(datas) 
-			}
+        }
+
     })
 
 }
