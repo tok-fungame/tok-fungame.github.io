@@ -26,6 +26,7 @@
                 <div id="loading" v-if="loading">
                     <img src="img/nodate.png"/>
                 </div>
+                 <!-- banner -->
                 <div class="tj-banner">
                     <div class="swiper-container" id="banner">
                         <div class="swiper-wrapper">
@@ -40,10 +41,27 @@
                     </div>
                 </div>
                 
+                <!-- category title -->
                 <div class="tj-hottit">
-                    <i class="line"></i>
+                    <!-- <i class="line"></i> -->
                     <span>专家推荐</span>
                     <a v-on:click="openbill('speciallist-hots.html?type=0','tjdtgdzj')">更多 ></a>
+                    <div class="uu-line">
+                        <div class="uu-subline"></div>
+                    </div>
+                </div>
+                <div class="tj-hot-mode">
+                    <a v-on:click="openbill('billboard.html?type=0','tjdtphb')" class="icon1"></a>
+                    <a v-on:click="openbill('billboard.html?type=1','tjdtphb')" class="icon2"></a>
+                    <a v-on:click="openbill('billboard.html?type=2','tjdtphb')" class="icon3"></a>
+                </div>
+                <div class="tj-hot-mode1">
+                     <a v-on:click="openbill('billboard.html?type=3','tjdtphb')" class="icon4"></a>
+                    <a v-on:click="openhot('speciallist-red.html','连红榜','tjdtgdzj')" class="icon5"></a>
+                </div>
+                <div class="spacing">
+                    <div class="uu-line">
+                    </div>
                 </div>
                 <div class="tjTab" v-if="index==0">
                     <span :class="tab==0?'dq':''" v-on:click="tabChange(0)">热门专家</span>
@@ -90,36 +108,15 @@
                         <div class="swiper-pagination salePagination"></div>
                     </div>
                 </div>
-                <div class="tj-hot-mode">
-                    <span v-for="v in modeList" :class="v.classname" v-on:click="openMode(v.type)"></span>
-                </div>
-                <div class="tj-rank">
-                    <a v-on:click="openbill('billboard.html?type=0','tjdtphb')" class="icon1">
-                        <i></i>
-                        排行榜
-                    </a>
-                    <a v-on:click="openbill('billboard.html?type=1','tjdtphb')" class="icon2">
-                        <i></i>
-                        赛事榜
-                    </a>
-                    <a v-on:click="openbill('billboard.html?type=2','tjdtphb')" class="icon3">
-                        <i></i>
-                        玩法榜
-                    </a>
-                    <a v-on:click="openbill('billboard.html?type=3','tjdtphb')" class="icon4">
-                        <i></i>
-                        人气榜
-                    </a>
-                    <a v-on:click="openhot('speciallist-red.html','连红榜','tjdtgdzj')" class="icon5">
-                        <i></i>
-                        连红榜
-                    </a>
-                </div>
+                
 
                 <div class="tj-hottit bot-line" v-if="redList.length>0">
-                    <i class="line"></i>
+                    <!-- <i class="line"></i> -->
                     <span>正在连红</span>
                     <a v-on:click="openhot('speciallist-red.html','连红榜','tjdtgdzj')">更多 ></a>
+                    <div class="uu-line">
+                        <div class="uu-subline"></div>
+                    </div>
                 </div>
                 <div class="tj-hot" v-if="redList.length>0">
                     <div class="swiper-container" id="red">
@@ -140,9 +137,12 @@
                 </div>
                 
                 <div class="tj-hottit noradius">
-                    <i class="line"></i>
+                    <!-- <i class="line"></i> -->
                     <span>热门推荐</span>
                     <a v-on:click="opennative('tj','','','tjdtgdtj')">查看全部 ></a>
+                    <div class="uu-line">
+                        <div class="uu-subline"></div>
+                    </div>
                 </div>
                 <div class="tj whitebg">
                     <div class="nohotdata" v-show="isShow">
@@ -158,10 +158,11 @@
                                 </em>
                             </span>
                             <span class="usermark">
+                                <i class="mr-10">{{v.levelName}}</em>
                                 <i :class="v.playWinRate!='' || v.sclassWinRate!='' || v.red>1 || v.sclassRed>1 ? 'nickname' : 'nickname h' ">
                                     <em class="name">{{v.nickName}}</em>
                                     <em class="line"></em>
-                                    <em class="mr-10">{{v.levelName}}</em>
+                                    
                                     <em class="pic" v-if="v.weekChampionCount>0">
                                         <img src="img/rank-week.png" alt="">{{v.weekChampionCount}}
                                     </em>
@@ -170,7 +171,6 @@
                                     </em>
                                 </i>
                                 <i class="playmark">
-                                    <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
                                     <template v-if="v.sclassWinRate!=''">
                                         {{v.goodSclass}}: <em>{{v.sclassWinRate}}%</em>
                                     </template>
@@ -180,13 +180,14 @@
                                         <template v-else>进球数</template>
                                         : <em>{{v.playWinRate}}%</em>
                                     </template>
+                                    <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
                                 </i>
                             </span>
                             <span class="remark1" v-if="v.tenWinRate>0">
+                                近10场胜率
                                 <i>
                                     <em class="font-20">{{v.tenWinRate}}%</em>
                                 </i>
-                                近10场胜率
                             </span>
                         </li>
                         <li class="contents" v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">
@@ -241,7 +242,7 @@
             </div>
             <!-- <div class="tj-edit" v-on:click="fabuTj()"></div>-->
         </div>
-        <script type="text/javascript" src="js/tuijianIndex.js"></script>
+        <script type="text/javascript" src="js/tuijianIndex-debug.js"></script>
         <script>
             FastClick.attach(document.body);
             document.body.addEventListener('touchstart', function() {}, false);
