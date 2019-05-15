@@ -3662,6 +3662,9 @@ em.yellowRedCard {
     border-bottom-left-radius: 5px;*/
     margin-left: 3%;
 }
+.tj-hot-mode {
+    padding-bottom: 9px;
+}
 .tj-hot-mode span {
     width: 31%;
     margin-left: 2%;
