@@ -4,8 +4,8 @@ body {
     /*font-family:'苹方',Arial, sans-serif; */
     font-weight: 300;
     font-size: 62.5%;
-    width: 600px;
-    height: 600px;
+    /*width: 600px;
+    height: 600px;*/
     background: #ccc;
     background-image: repeating-linear-gradient(-45deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,.1)15px,transparent 0,transparent 30px);
 }
