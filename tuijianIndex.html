@@ -208,6 +208,19 @@
                                 推荐玩法:   <i v-if="v.playType==1">胜平负</i>
                                 <i v-else-if="v.playType==2">让球</i>
                                 <i v-else>进球数</i>
+                                <i class="pinglun" v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">
+                                    <i class="time">
+                                        <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  
+                                    </i>
+                                    <i class="readcount">
+                                        <img src="img/look.png" alt="">{{v.readCount}}
+                                    </i>
+                                    <span v-if="v.amount>0">
+                                        <i class="paycount">
+                                            <img src="img/paycount.png" alt="">{{v.buyCount}}人购买
+                                        </i>
+                                    </span>
+                                </i>
                             </span>
                             <span class="tj-yuan tops" v-if="v.canSee">
                                 <template v-if="v.recommendResult!=''">
@@ -225,19 +238,7 @@
                                 {{v.amount/100}}钻石  
                             </span>
                         </li>
-                        <li class="pinglun" v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">
-                            <i class="time">
-                                <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  
-                            </i>
-                            <i class="readcount">
-                                <img src="img/look.png" alt="">{{v.readCount}}
-                            </i>
-                            <span v-if="v.amount>0">
-                                <i class="paycount">
-                                    <img src="img/paycount.png" alt="">{{v.buyCount}}人购买
-                                </i>
-                            </span>
-                        </li>
+                        
                     </ul>
                 </div>
                 <!-- <div class="cjmore" v-on:click="opennative('tj','','','tjdtgdtj')">查看更多推荐 <i></i> </div>  -->

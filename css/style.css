@@ -3696,6 +3696,7 @@ em.yellowRedCard {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-bottom: 5px;
+    padding-bottom: 0px;
 }
 .tj ul.botline {
     border-bottom: 1px solid #f2f2f2;
