@@ -169,6 +169,8 @@
                                     <em class="pic" v-if="v.monthChampionCount>0">
                                         <img src="img/rank-month.png" alt="">{{v.monthChampionCount}}
                                     </em>
+                                    <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
+                                    </i>
                                 </i>
                                 <i class="playmark">
                                     <template v-if="v.sclassWinRate!=''">
@@ -180,8 +182,7 @@
                                         <template v-else>进球数</template>
                                         : <em>{{v.playWinRate}}%</em>
                                     </template>
-                                    <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
-                                </i>
+                                    
                             </span>
                             <span class="remark1" v-if="v.tenWinRate>0">
                                 近10场胜率
