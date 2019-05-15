@@ -3694,11 +3694,12 @@ em.yellowRedCard {
     margin-bottom: 5px;
     /*padding-bottom: 10px;*/
     margin-left: 3%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .tj ul.shadow {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 6px 0px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     margin-bottom: 5px;
     padding-bottom: 0px;
 }
