@@ -1,35 +1,33 @@
 var vum = "";
  gq.ready(function(){
 //获取token 
-var token = ""
-  , userId = ""
- gq.getToken(function(res){ 
-     if(res.token!=null){  
-       token=res.token
-         gq.info(function(res){  
-             userId=res.userId; 
-             platform=res.platform  
-platform = 0;
-vv(token, userId, platform)
-         })
-     }   
-   })  
-gq.addEventListener("reload", function() {
-    gq.getToken(function(res) {
-        if (res.token != null) {
-            vum.token = res.token
-            gq.info(function(res) {
-                vum.userId = res.userId;
+    var token="",userId=""
+    gq.getToken(function(res){ 
+        if(res.token!=null){  
+          token=res.token
+            gq.info(function(res){  
+                userId=res.userId; 
+                platform=res.platform   
+                vv(token,userId,platform)
             })
-        } else {
-            vum.token = ""
-        }
-        Vue.http.headers.common['token'] = vum.token
-        vum.limitStart = 0
-        vum.limitStart1 = 0
-    });
-})
-// })  
+        }   
+   })  
+   gq.addEventListener("reload",function(){ 
+           gq.getToken(function(res){  
+                if(res.token!=null){  
+                     vum.token=res.token   
+                     gq.info(function(res){  
+                         vum.userId=res.userId;   
+                      })
+                }else{ 
+                     vum.token=""
+                 }   
+              Vue.http.headers.common['token'] = vum.token
+              vum.limitStart=0
+              vum.limitStart1=0 
+          });  
+   }) 
+})   
 function vv(token, userId, platform) {
     Vue.http.headers.common['token'] = token
     vum = new Vue({
