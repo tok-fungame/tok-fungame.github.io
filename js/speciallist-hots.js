@@ -343,8 +343,35 @@ function vv(token, userId, platform) {
                 gq.open(datas);
             }
 
-        }
-
+        },
+        openMode:function(val){   
+				var h5url="",title=""  
+				if(val==1){
+					h5url="spfmode.html";
+					title="临场胜平负"   
+				}else if(val==4){
+					h5url="cpspfmode.html"; 
+					title="初始胜平负"     
+				}else if(val==2){
+					h5url="yamode.html";  
+					title="临场亚指"      
+				}else if(val==5){
+					h5url="cpyamode.html"; 
+					title="初始亚指"      
+				}else if(val==3){
+					h5url="dxmode.html";   
+					title="八维指数"     
+				}else{
+					h5url="blmode.html";   
+					title="高赔爆冷"     
+				}
+				var datas={ 
+					title:"",
+					url:linkurl+h5url,
+					nav_hidden:true 
+				}   
+				gq.openH5(datas) 
+			}
     })
 
 }
