@@ -37,6 +37,7 @@ function vv(token, userId, platform) {
         data: {
             saleList: [],
             redList: [],
+            modeList:[],
             mySwiper: "",
             loading: true,
             index: 0,
@@ -56,6 +57,7 @@ function vv(token, userId, platform) {
             this.index = type
             this.salePage()
             this.redPage()
+            this.modelShow()
         },
         mounted: function() {
             var s = 0
@@ -65,11 +67,43 @@ function vv(token, userId, platform) {
             if (this.platform == 1) {
                 s = 20
             }
-            var clientH = document.body.clientHeight - 76 - s;
+            var clientH = document.body.clientHeight - 122 - s;
             document.querySelector('.swiper-wrapper').style.height = clientH + "px"
             document.querySelector('.swiper-container').style.height = clientH + "px"
         },
         methods: {
+             modelShow:function(){
+                this.$http.get(url+'recommend/model/show').then(function(response) { 
+                    var res=response.body;
+                    this.modeList=[];
+                    if(res.code=="200"){   
+                        for(v in res.data){
+                            if(res.data[v]==1){
+                                classname="spf";
+                                type=1
+                            }else if(res.data[v]==2){
+                                classname="ya";
+                                type=2
+                            }else if(res.data[v]==3){
+                                classname="dx";
+                                type=3
+                            }else if(res.data[v]==4){
+                                classname="spf";
+                                type=4
+                            }else if(res.data[v]==5){
+                                classname="ya";
+                                type=5
+                            }else {
+                                classname="spf";
+                                type=6
+                            } 
+                            this.modeList.push({classname:classname,type:type}) 
+                        }
+                    }
+                }, function(response) {
+                    
+                }) 
+            },
             salePage: function() {
                 this.$http.get(url + 'rec/hotsalers/list?limitStart=' + this.limitStart + '&limitNum=20').then(function(response) {
                     var res = response.body;
