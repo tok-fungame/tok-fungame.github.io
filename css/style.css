@@ -4108,6 +4108,9 @@ em.yellowRedCard {
     float: left;
     margin-top: 8px;
     font-family: Arial, Helvetica, sans-serif;
+    top: -28px;
+    right: -6%;
+    position: relative;
 }
 .tj ul li.pinglun i {
     float: right;
@@ -4119,6 +4122,7 @@ em.yellowRedCard {
 .tj ul li.pinglun span {
     float: right;
     padding: 0;
+    margin-right: 10px;
 }
 .tj ul li.pinglun span i {
     margin-left: 15px;
@@ -4178,7 +4182,7 @@ em.yellowRedCard {
     top: 20px;
 }
 .playmoney.tops {
-    top: 30px;
+    top: 3px;
 }
 @keyframes rotateIn {
     0% {
