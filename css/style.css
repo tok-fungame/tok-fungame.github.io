@@ -3363,7 +3363,7 @@ em.yellowRedCard {
 .tj-banner {
     width: 100%;
     float: left;
-    background: url(../img/tj_bg.png) no-repeat top #eee;
+    /*background: url(../img/tj_bg.png) no-repeat top #eee;*/
     position: relative;
 }
 .tj-banner .swiper-pagination {
@@ -3673,8 +3673,8 @@ em.yellowRedCard {
     margin-right: auto;
 }
 .tj-hot-mode span {
-    margin: 10px 3%;
-    width: 27%;
+    margin: 10px 2%;
+    width: 28%;
     float: left;
     height: 54px;
 }
