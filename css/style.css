@@ -12188,3 +12188,12 @@ ul.banklist li span em {
     line-height: 20px;
     text-align: center;
 }
+.v-line {
+    position: relative;
+    top: 0.25em;
+    height: 20px;
+    left: 0;
+    content: '';
+    width: 0;
+    border-left: solid #DCDCDC 1px;
+}
