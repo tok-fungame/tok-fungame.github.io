@@ -8438,6 +8438,9 @@ ul.tabs li.default a i {
     margin-left: 2%;
     border-radius: 6px;
 }
+.special-hot ul li:first-child {
+    margin-top: 30px;
+}
 .special-hot ul li span.fouced:active {
     background: #f2f2f2;
 }
