@@ -947,21 +947,27 @@ p.nodatas {
     float: left;
     height: 42px;
 }
+.tj-hot-mode2 a {
+    width: 31%;
+    margin-left: 2%;
+    float: left;
+    height: 42px;
+}
 .tj-hot-mode1 a {
     width: 47%;
     margin-left: 2%;
     float: left;
     height: 42px;
 }
-.tj-hot-mode .icon1 {
+.tj-hot-mode2 .icon1 {
     background: url(../img/icontop01.png) no-repeat center;
     background-size: 110px;
 }
-.tj-hot-mode .icon2 {
+.tj-hot-mode2 .icon2 {
     background: url(../img/icontop02.png) no-repeat center;
     background-size: 110px;
 }
-.tj-hot-mode .icon3 {
+.tj-hot-mode2 .icon3 {
     background: url(../img/icontop03.png) no-repeat center;
     background-size: 110px;
 }
@@ -3651,7 +3657,7 @@ em.yellowRedCard {
     width: 68px;
     height: 68px;
 }
-.tj-hot-mode, .tj-hot-mode1 {
+.tj-hot-mode2, .tj-hot-mode1 {
     width: 94%;
     float: left;
     background: #fff;
@@ -3663,25 +3669,26 @@ em.yellowRedCard {
     margin-left: 3%;
 }
 .tj-hot-mode {
-    padding-bottom: 9px;
+    margin-left: 3%;
+    margin-right: auto;
 }
 .tj-hot-mode span {
-    width: 31%;
-    margin-left: 2%;
+    margin: 10px 3%;
+    width: 27%;
     float: left;
-    height: 42px;
+    height: 54px;
 }
 .tj-hot-mode span.dx {
     background: url(../img/icon-tjdx.png) no-repeat center;
-    background-size: 110px;
+    background-size: contain;
 }
 .tj-hot-mode span.spf {
     background: url(../img/icon-tjspf.png) no-repeat center;
-    background-size: 110px;
+    background-size: contain;
 }
 .tj-hot-mode span.ya {
     background: url(../img/icon-tjya.png) no-repeat center;
-    background-size: 110px;
+    background-size: contain;
 }
 .tj {
     float: left;
