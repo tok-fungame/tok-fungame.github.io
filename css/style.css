@@ -3680,14 +3680,14 @@ em.yellowRedCard {
     margin-left: 3%;
 }
 .tj-hot-mode {
-    margin-left: 3%;
+    margin-left: 1.5%;
     margin-right: auto;
 }
 .tj-hot-mode span {
-    margin: 10px 2%;
-    width: 28%;
+    margin: 7px 0.5%;
+    width: 32%;
     float: left;
-    height: 54px;
+    height: 46px;
 }
 .tj-hot-mode span.dx {
     background: url(../img/icon-tjdx.png) no-repeat center;
