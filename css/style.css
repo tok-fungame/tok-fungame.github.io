@@ -3540,7 +3540,7 @@ em.yellowRedCard {
     color: #A12A01;
     text-decoration: underline;
 }
-.tj-hot {
+.tj-hot, .chat-hall {
     width: 94%;
     float: left;
     background: #fff;
@@ -3550,6 +3550,17 @@ em.yellowRedCard {
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     margin-left: 3%;
+}
+.chat-hall img {
+    width: 20%;
+    position: relative;
+    top: 10px;
+}
+.chat-hall .chat-hall-btn {
+    width: 50%;
+    vertical-align: middle;
+    position: relative;
+    top: -19px;
 }
 .visibility {
     visibility: hidden;
