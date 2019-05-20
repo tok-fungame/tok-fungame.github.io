@@ -65,7 +65,7 @@ function vv(token, userId, platform) {
             if (this.platform == 1) {
                 s = 20
             }
-            var clientH = document.body.clientHeight - 122 - s;
+            var clientH = document.body.clientHeight - 76 - s;
             document.querySelector('.swiper-wrapper').style.height = clientH + "px"
             document.querySelector('.swiper-container').style.height = clientH + "px"
         },

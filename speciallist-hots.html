@@ -25,12 +25,9 @@
    <div class="special-nav"><span :class="index==0?'dq':''" v-on:click="changeNav(0)">热销分析师</span>
     <span class="v-line"></span>
     <span :class="index==1?'dq':''" v-on:click="changeNav(1)">热门专家</span></div>
-   <div class="tj-hot-mode">
-      <span v-for="v in modeList" :class="v.classname" v-on:click="openMode(v.type)"></span>
-   </div>
    <div class="special-hottit"><span>排名</span> <span>用户</span> <span v-if="index==0">销量</span> <span v-else> </span></div>  
 </div>
- <div class="content2" :style="platform==1?'margin-top:156px':'margin-top:118px'">   
+ <div class="content2" :style="platform==1?'margin-top:96px':'margin-top:76px'">   
     <div class="swiper-container">
       <div class="swiper-wrapper"> 
          <div class="swiper-slide mescroll" id="mescroll1" style="position:relative;top:0px;bottom: 0;height: auto;">    
@@ -100,7 +97,7 @@
   </div> 
 </div> 
 </div>
-<script type="text/javascript"  src="js/speciallist-hots.js"></script> 
+<script type="text/javascript"  src="js/speciallist-hots_debug.js"></script> 
 <script>
   document.body.addEventListener('touchstart',function(){},false);
 </script>
