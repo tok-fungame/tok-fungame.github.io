@@ -7978,13 +7978,14 @@ ul.tabs li.default a i {
     position: relative;
 }
 .special-nav span {
-    padding: 0 4px;
     display: inline-block;
-    margin: 4px 30px 0 5px;
+    margin: 4px 0px 0 0px;
     line-height: 36px;
     color: #DCDCDC;
     font-size: 1.6em;
     opacity: 1;
+    float: left;
+    width: 50%;
 }
 .special-nav span.dq {
     color: #fff;
@@ -12203,12 +12204,14 @@ ul.banklist li span em {
     text-align: center;
 }
 .v-line {
-    position: relative;
+    position: absolute;
     top: 0.25em;
     height: 20px;
     left: 0;
     content: '';
     width: 0;
+    margin-left: 50%;
+    margin-top: 8px;
     border-left: solid #DCDCDC 1px;
 }
 .tj ul li.pinglun{ width:94%; padding:0 3%; float:left; margin-top:8px; font-family:Arial, Helvetica, sans-serif;  }
