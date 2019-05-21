@@ -7977,7 +7977,8 @@ ul.tabs li.default a i {
     text-align: center;
     position: relative;
 }
-.special-nav span {
+.special-nav span{ padding:0 4px; display:inline-block; margin:4px 5px 0 5px; line-height:36px; color:#DCDCDC; font-size:1.6em; opacity: 1;  }
+.special-nav span.mySpan {
     display: inline-block;
     margin: 4px 0px 0 0px;
     line-height: 36px;
@@ -8426,7 +8427,7 @@ ul.tabs li.default a i {
 .special-hottit span:nth-child(2) {
     float: left;
     margin-left: 41px;
-    width: 175px;
+    width: 181px;
 }
 .special-hottit span:nth-child(3) {
     float: left;
