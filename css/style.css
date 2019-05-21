@@ -8420,13 +8420,13 @@ ul.tabs li.default a i {
 }
 .special-hottit span:nth-child(1) {
     float: left;
-    width: 38px;
+    width: 14%;
     text-align: center;
 }
 .special-hottit span:nth-child(2) {
     float: left;
-    margin-left: 45px;
-    width: 45%;
+    margin-left: 11%;
+    width: 42%;
 }
 .special-hottit span:nth-child(3) {
     float: left;
