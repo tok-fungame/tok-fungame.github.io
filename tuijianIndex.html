@@ -220,7 +220,7 @@
                                 推荐玩法:   <i v-if="v.playType==1">胜平负</i>
                                 <i v-else-if="v.playType==2">让球</i>
                                 <i v-else>进球数</i>
-                                <i class="pinglun" v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">
+                                <i class="pinglun height-fix" v-on:click="opennative('tjinfo',v.newsId,'','tjdtrmtj')">
                                     <i class="time">
                                         <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  
                                     </i>

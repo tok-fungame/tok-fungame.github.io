@@ -12222,3 +12222,7 @@ ul.banklist li span em {
 .tj ul li.pinglun i.readcount img{  width:14px!important; margin-top:2px; }
 .tj ul li.pinglun i.paycount img{  width:12px!important;  margin-top:3px; }
 .tj ul li.pinglun span i{ margin-right:0px;}
+
+.height-fix {
+    height: 0px;
+}
