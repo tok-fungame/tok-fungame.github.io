@@ -8,8 +8,8 @@ gq.ready(function(){
 		 var platform=res.platform
 		 if(platform==1){
 			 equipment=1
-			 // top="margin-top:20px"
-			 // top1="margin-top:64px"
+			 top="margin-top:20px"
+			 top1="margin-top:64px"
 			 // hbg="background: #DB2D21"
 		 }else{
 			 equipment=2
