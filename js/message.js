@@ -10,7 +10,7 @@ gq.ready(function(){
 			 equipment=1
 			 top="margin-top:20px"
 			 top1="margin-top:64px"
-			 // hbg="background: #DB2D21"
+			 hbg="background: #FF8E00"
 		 }else{
 			 equipment=2
 			 }
