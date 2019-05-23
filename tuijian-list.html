@@ -1,231 +1,136 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta content="telephone=no,email=no" name=format-detection />
-<title>推荐</title>  
-<link rel="stylesheet" type="text/css" href="https://mobile.gunqiu.com/appH5/v6/css/style.css?_=9" />  
-<link rel="stylesheet" type="text/css" href="mescroll/mescroll.min.css" /> 
-<script type="text/javascript" src="//static.gunqiu.com/static/2.0.1/gqjssdk.min.js"></script>
-<script type="text/javascript"  src="js/common.js"></script> 
-<script src="mescroll/mescroll.min.js"></script>       
-<script type="text/javascript"  src="//static.gunqiu.com/static/vue.min.js"></script>     
-<script src="//static.gunqiu.com/static/vue-resource.min.js"></script>  
-<script type="text/javascript"  src="js/filter.js"></script>  
-<style>
-  .nav span.dq, .navi span.dq {
-    background: #FF8E00;
-  }
-</style>
-</head> 
-<body  ontouchstart=""> 
-<div id="app" v-cloak>     
-<div class="header fixed"> 
- <div class="nav">
-     <div class="navi">
-     <span :class="ptype==0?'dq':''"  @click="jumpTo(0)" >综合</span> 
-     <span  @click="jumpTo(1)" :class="ptype==1?'dq':''">让球</span>
-     <span  @click="jumpTo(2)" :class="ptype==2?'dq':''">进球数</span> 
-     <span  @click="jumpTo(3)" :class="ptype==3?'dq':''">胜平负</span> 
-     </div> 
- </div>
-</div>  
-  <div id="mescroll" class="mescroll" ref="wrapper" style="top:44px">
- <div id="loading" v-if="loading"><img src="img/nodate.png" /></div>   
-  <div class="content2" v-else>
-      <div class="nodata1" v-if="nomore"> <img src="img/nodata.png" alt="" /> <span>暂无相关数据</span></div>
-      <div v-else>
-   <div class="tjmode" v-if="list.model.length>0">  
-    <ul>  
-        <li v-for="v in list.model"> 
-			<template v-if="v.type==1">
-            <a  v-on:click="openpay(v.detail.see,v.type,v.detail.scheduleId)">
-			<span class="tit"><img src="img/spficon.png" alt="">  <i :class="v.detail.isBestInvest==1?'':'long'"><em class="font-12 font-600">临场胜平负</em> <em class="lian" v-if="v.red>0">{{v.red}}连红</em> <em v-if="v.detail.isBestInvest==1" class="zt"></em> </i> <i class="rate" v-if="v.detail.showWinRate"><em>{{v.detail.winRate}}</em> {{v.detail.sclassName}}</i>  </span>  
-                 <span class="choice">     
-                     <span class="play"> 推荐玩法:   <i> 胜平负 </i> </span>
-                     <span class="cansee1" v-if="v.detail.see && v.detail.result==''">	
-                         <em> {{v.detail.number}}</em>  
-                          <i v-if="v.detail.direct=='W'||v.detail.direct=='W,D'||v.detail.direct=='W,L'">胜 &nbsp; {{v.detail.upodds}}</i> 
-                          <i v-if="v.detail.direct=='D'||v.detail.direct=='D,L'||v.detail.direct=='W,D'">平 &nbsp;  {{v.detail.goal}}</i>  
-                          <i v-if="v.detail.direct=='L'||v.detail.direct=='D,L'||v.detail.direct=='W,L'">负 &nbsp;  {{v.detail.downodds}}</i>   
-                      </span>
-                    <span class="pic spf" v-else-if="v.detail.see && v.detail.result!=''">	
-					   <img src="img/mode-win-sma.png" alt=""  v-if="v.detail.result=='中'">   
-					   <img src="img/mode-lose-sma.png" alt=""  v-else-if="v.detail.result=='黑'"> 
-                        <img src="img/mode-wuxiao-sma.png" alt=""  v-else>  
-                        <i class="pk">  {{v.detail.number}} </i>
-                        <i> 
-                        <em :class='v.detail.result=="中" && v.detail.resultOddsItem==3?"big":""'  v-if="v.detail.direct=='W'||v.detail.direct=='W,D'||v.detail.direct=='W,L'">  胜 {{v.detail.upodds}}  </em> 
-                         <em :class='v.detail.result=="中" && v.detail.resultOddsItem==1?"big":""'  v-if="v.detail.direct=='D'||v.detail.direct=='D,L'||v.detail.direct=='W,D'">  平 {{v.detail.goal}}  </em> 
-                         <em :class='v.detail.result=="中" && v.detail.resultOddsItem==0?"big":""'  v-if="v.detail.direct=='L'||v.detail.direct=='D,L'||v.detail.direct=='W,L'"> 负 {{v.detail.downodds}}  </em>   
-                       </i>
-                     </span>
-				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.price==3800 ? 30 : v.price/100}}&nbsp; </em>  </span> 
-				</span> 
-                </a>
-			</template>
-			<template v-else-if="v.type==4">
-            <a v-on:click="openpay(v.detail.see,v.type,v.detail.scheduleId)">
-				<span class="tit"><img src="img/cpspficon.png" alt="">  <i :class="v.detail.isBestInvest==1?'':'long'"><em class="font-12 font-600">初始胜平负</em> <em class="lian" v-if="v.red>0">{{v.red}}连红</em>  <em v-if="v.detail.isBestInvest==1" class="zt"></em> </i> <i class="rate" v-if="v.detail.showWinRate"><em>{{v.detail.winRate}}</em> {{v.detail.sclassName}}</i>  </span>  
-                 <span class="choice">     
-                     <span class="play"> 推荐玩法:   <i> 胜平负 </i> </span>
-                     <span class="cansee1" v-if="v.detail.see && v.detail.result==''">	
-                         <em> {{v.detail.number}}</em>  
-                          <i v-if="v.detail.direct=='W'||v.detail.direct=='W,D'||v.detail.direct=='W,L'">胜 &nbsp; {{v.detail.upodds}}</i> 
-                          <i v-if="v.detail.direct=='D'||v.detail.direct=='D,L'||v.detail.direct=='W,D'">平 &nbsp;  {{v.detail.goal}}</i>  
-                          <i v-if="v.detail.direct=='L'||v.detail.direct=='D,L'||v.detail.direct=='W,L'">负 &nbsp;  {{v.detail.downodds}}</i>   
-                      </span>
-                     <span class="pic spf" v-else-if="v.detail.see && v.detail.result!=''">	
-					   <img src="img/mode-win-sma.png" alt=""  v-if="v.detail.result=='中'">   
-					   <img src="img/mode-lose-sma.png" alt=""  v-else-if="v.detail.result=='黑'"> 
-                        <img src="img/mode-wuxiao-sma.png" alt=""  v-else>  
-                        <i class="pk">  {{v.detail.number}} </i>
-                        <i> 
-                        <em :class='v.detail.result=="中" && v.detail.resultOddsItem==3?"big":""'  v-if="v.detail.direct=='W'||v.detail.direct=='W,D'||v.detail.direct=='W,L'">  胜 {{v.detail.upodds}}  </em> 
-                         <em :class='v.detail.result=="中" && v.detail.resultOddsItem==1?"big":""'  v-if="v.detail.direct=='D'||v.detail.direct=='D,L'||v.detail.direct=='W,D'">  平 {{v.detail.goal}}  </em> 
-                         <em :class='v.detail.result=="中" && v.detail.resultOddsItem==0?"big":""'  v-if="v.detail.direct=='L'||v.detail.direct=='D,L'||v.detail.direct=='W,L'"> 负 {{v.detail.downodds}}  </em>   
-                       </i>
-                     </span> 
-				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.price==3800 ? 30 : v.price/100}}&nbsp;</em>  </span>
-				</span>  
-                </a>
-			</template>
-		<template v-else-if="v.type==2">
-            <a v-on:click="openpay(v.detail.see,v.type,v.detail.scheduleId)">
-				<span class="tit"><img src="img/yaicon.png" alt=""> <i :class="v.detail.isBestInvest==1?'':'long'"><em class="font-12 font-600">临场亚指</em> <em class="lian" v-if="v.red>0">{{v.red}}连红</em> <em v-if="v.detail.isBestInvest==1" class="zt"></em> </i> <i class="rate" v-if="v.detail.showWinRate"><em>{{v.detail.winRate}}</em> {{v.detail.sclassName}}</i>  </span>  
-                <span class="choice">     
-                     <span class="play"> 推荐玩法:   <i>  让球  </i> </span>
-                     <span class="cansee" v-if="v.detail.see && v.detail.result==''">	
-                          <i v-if="v.detail.direct=='0,1'">主 {{v.detail.goal}}</i> 
-                          <i v-else>客 {{v.detail.goal}}</i>  
-                      </span>
-                  <span class="pic" v-else-if="v.detail.see && v.detail.result!=''">	
-                        <img src="img/mode-win-sma.png" alt=""  v-if="v.detail.result=='赢'">   
-                        <img src="img/mode-lose-sma.png" alt=""  v-else-if="v.detail.result=='输'">  
-                        <img src="img/mode-zou-sma.png" alt=""  v-else-if="v.detail.result=='走'">  
-                        <img src="img/mode-winhalf-sma.png" alt=""  v-else-if="v.detail.result=='赢半'">   
-                        <img src="img/mode-losehalf-sma.png" alt=""  v-else-if="v.detail.result=='输半'"> 
-                        <img src="img/mode-wuxiao-sma.png" alt=""  v-else>   
-                        <em :class='v.detail.result=="赢" || v.detail.result=="赢半"?"big":""'> 
-                            <template v-if="v.direct=='0,1'">主队 {{v.detail.goal | filterYagoal(1)}}</template> 
-                            <template v-else>客队 {{v.detail.goal | filterYagoal(2)}}</template>  
-                        </em>  
-                     </span> 
-				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.price==3800 ? 30 : v.price/100}}&nbsp;</em>  <i>让球 {{v.detail.goal}}</i></span>
-				</span>  
-				 </a>
-			</template>
-		<template v-else-if="v.type==5">
-            <a v-on:click="openpay(v.detail.see,v.type,v.detail.scheduleId)">
-				<span class="tit"><img src="img/cpyaicon.png" alt=""> <i :class="v.detail.isBestInvest==1?'':'long'"><em class="font-12 font-600">初始亚指</em> <em class="lian" v-if="v.red>0">{{v.red}}连红</em> <em v-if="v.detail.isBestInvest==1" class="zt"></em> </i> <i class="rate" v-if="v.detail.showWinRate"><em>{{v.detail.winRate}}</em> {{v.detail.sclassName}}</i>  </span>  
-                <span class="choice">     
-                     <span class="play"> 推荐玩法:   <i>  让球  </i> </span>
-                     <span class="cansee" v-if="v.detail.see && v.detail.result==''">	
-                          <i v-if="v.detail.direct=='0,1'">主 {{v.detail.goal}}</i> 
-                          <i v-else>客 {{v.detail.goal}}</i>   
-                      </span>
-                    <span class="pic" v-else-if="v.detail.see && v.detail.result!=''">	
-                        <img src="img/mode-win-sma.png" alt=""  v-if="v.detail.result=='赢'">   
-                        <img src="img/mode-lose-sma.png" alt=""  v-else-if="v.detail.result=='输'">  
-                        <img src="img/mode-zou-sma.png" alt=""  v-else-if="v.detail.result=='走'">  
-                        <img src="img/mode-winhalf-sma.png" alt=""  v-else-if="v.detail.result=='赢半'">   
-                        <img src="img/mode-losehalf-sma.png" alt=""  v-else-if="v.detail.result=='输半'">
-                        <img src="img/mode-wuxiao-sma.png" alt=""  v-else>    
-                       <em :class='v.detail.result=="赢" || v.detail.result=="赢半"?"big":""'> 
-                            <template v-if="v.direct=='0,1'">主队 {{v.detail.goal | filterYagoal(1)}}</template> 
-                            <template v-else>客队 {{v.detail.goal | filterYagoal(2)}}</template>  
-                        </em>  
-                     </span> 
-				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.price==3800 ? 30 : v.price/100}}&nbsp;</em>  <i>让球 {{v.detail.goal}}</i></span>
-				</span>  
-				 </a>
-			</template>
-		<template v-else-if="v.type==3">
-            <a v-on:click="openpaydx(v.detail.see,v.detail.scheduleId)">
-                <span class="tit"><img src="img/dxicon.png" alt=""> <i :class="v.detail.isBestInvest==1?'':'long'"><em class="font-12 font-600">八维指数</em> <em class="lian" v-if="v.red>0">{{v.red}}连红</em> <em v-if="v.detail.isBestInvest==1" class="zt"> </em> </i> <i class="rate" v-if="v.detail.showWinRate"><em>{{v.detail.winRate}}</em> {{v.detail.sclassName}}</i>  </span> 
-				  <span class="choice">     
-                     <span class="play"> 推荐玩法:   <i>  进球数  </i> </span>
-                     <span class="cansee" v-if="v.detail.see && v.detail.result==''">	
-                          <i :class="v.detail.direct=='1'?'big':'sma'">{{v.detail.direct=='1'?'大球':'小球'}} {{v.detail.goal}}</i>  
-                      </span>
-                    <span class="pic" v-else-if="v.detail.see && v.detail.result!=''">	
-                        <img src="img/mode-win-sma.png" alt=""  v-if="v.detail.result=='赢'">   
-                        <img src="img/mode-lose-sma.png" alt=""  v-else-if="v.detail.result=='输'">  
-                        <img src="img/mode-zou-sma.png" alt=""  v-else-if="v.detail.result=='走'">  
-                        <img src="img/mode-winhalf-sma.png" alt=""  v-else-if="v.detail.result=='赢半'">   
-                        <img src="img/mode-losehalf-sma.png" alt=""  v-else-if="v.detail.result=='输半'">  
-                        <img src="img/mode-wuxiao-sma.png" alt=""  v-else>  
-                        <em  v-if='v.detail.result=="赢" || v.detail.result=="赢半"' :class="v.detail.direct==1?'big':'sma'">{{v.detail.direct==1?'大球':'小球'}} {{v.detail.goal}} </em>  
-                          <em  v-else>{{v.detail.direct==1?'大球':'小球'}} {{v.detail.goal}} </em>  
-                     </span> 
-				<span class="jiemi" v-else> <em><b></b>  ¥ {{v.price==3800 ? 30 : v.price/100}}&nbsp;</em> <i>进球数 {{v.detail.goal}}</i></span> 
-				</span> 
-                </a>
-			</template>
-        </li> 
-  </ul>
-    </div>
-    <div class="tj mt-10" v-if="list.news.length>0">  
-        <ul  v-for="v in list.news" class="noRadius1">
- <li class="usertitle" v-on:click="opennative('userinfo',v.userId,v.nickName,$event)">
-          <span class="username"><img :src="'https://mobile.gunqiu.com/avatar/'+v.userId+'?size=!100px'" alt="" class="pics">  <em v-if="v.level>0"> <img :src="'img/level_'+v.level+'.png'" alt=""></em>  </span>
-		    <span class="usermark">
-             <i  :class="v.goodPlay!='' || v.goodSclass!='' || v.red>1 || v.sclassRed>1 ? 'nickname' : 'nickname h' ">  
-			    <em class="name">{{v.nickName}}</em>  <em class="line"></em> <em class="mr-10">{{v.levelName}}</em> 
-			    <em class="pic" v-if="v.weekChampionCount>0"><img src="img/rank-week.png" alt=""> {{v.weekChampionCount}}</em> 
-			    <em class="pic" v-if="v.monthChampionCount>0"><img src="img/rank-month.png" alt=""> {{v.monthChampionCount}}</em> 
-			 </i>
-             
-			 <i class="playmark" v-if="v.goodPlay!='' || v.goodSclass!='' || v.red>1 || v.sclassRed>1"> 
-                 <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
-			    <template v-if="v.goodSclass!=''">   {{v.goodSclass}}: <em>{{v.sclassWinRate}}%</em>  </template>
-			    <template v-if="v.goodPlay!=''">   
-					<template v-if="v.goodPlay==1">胜平负</template> 
-					<template v-else-if="v.goodPlay==2">让球</template>  
-					<template v-else>进球数</template>: <em>{{v.playWinRate}}%</em>  
-				</template> 
-			  </i> 
-           </span> 
-           <span class="remark1" v-if="v.tenWinRate>0">    <i><em class="font-20">{{v.tenWinRate}}%</em></i> 近10场胜率</span>  
-		    </li>  
-	   <a  v-on:click="opennative('tjinfo',v.newsId,'',$event)">   
-        <li class="contents mt-10">  
-                  <span class="choices">  推荐玩法:   <i v-if="v.playType==1">  胜平负</i>   <i v-else-if="v.playType==2">  让球</i>   <i v-else> 进球数</i></span>  
-                     <span class="tj-yuan sma-top"  v-if="v.canSee">   
-			           <template  v-if="v.recommendResult!=''"> 
-                           <img v-if="v.recommendResult=='2'" src="img/guan-2-03.png" />
-                           <img v-else-if="v.recommendResult=='1'" src="img/guan-2-06.png" alt="" /> 
-                           <img v-else-if="v.recommendResult=='-2'" src="img/guan-2-02.png" alt="" /> 
-                           <img v-else-if="v.recommendResult=='-1'" src="img/guan-2-08.png" alt="" /> 
-                           <img v-else-if="v.recommendResult=='0'" src="img/guan-2-04.png" alt="" />
-                           <img v-else-if="v.recommendResult=='10'" src="img/guan-2-10.png" alt="" />
-                           <img v-else-if="v.recommendResult=='-3'" src="img/guan-2-01.png" alt="" />  
-                           </template> 
-		        </span>	 
-		        <span class="playmoney"  v-else>  <em></em>   ¥ {{v.amount==3800 ? 30 : v.amount/100}}&nbsp;</span>    
-                </li>   
-		  <li class="pinglun">  	
-             <i class="time"> <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  </i> 	
-             <i class="readcount"><img src="img/look.png" alt=""> {{v.readCount}}</i>  
-            <span v-if="v.amount>0"> <i class="paycount"><img src="img/paycount.png" alt=""> {{v.buyCount}}人购买</i>   </span>  
-           </li>  
-		   </a>   
-				
-	 </ul>  
-  
-    </div> 
-</div>
- </div> 
-</div> 
- </div> 
-  
-<script type="text/javascript"  src="js/tuijian-list.js"></script>
-<script>
-  document.body.addEventListener('touchstart',function(){},false);
-</script>
-</body>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta content="telephone=no,email=no" name=format-detection/>
+        <title>推荐</title>
+        <link rel="stylesheet" type="text/css" href="https://mobile.gunqiu.com/appH5/v6/css/style.css?_=9"/>
+        <link rel="stylesheet" type="text/css" href="mescroll/mescroll.min.css"/>
+        <script type="text/javascript" src="//static.gunqiu.com/static/2.0.1/gqjssdk.min.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+        <script src="mescroll/mescroll.min.js"></script>
+        <script type="text/javascript" src="//static.gunqiu.com/static/vue.min.js"></script>
+        <script src="//static.gunqiu.com/static/vue-resource.min.js"></script>
+        <script type="text/javascript" src="js/filter.js"></script>
+        <style>
+            .nav span.dq, .navi span.dq {
+                background: #FF8E00;
+            }
+        </style>
+    </head>
+    <body ontouchstart="">
+        <div id="app" v-cloak>
+            <div class="header fixed">
+                <div class="nav">
+                    <div class="navi">
+                        <span :class="ptype==0?'dq':''" @click="jumpTo(0)">综合</span>
+                        <span @click="jumpTo(1)" :class="ptype==1?'dq':''">让球</span>
+                        <span @click="jumpTo(2)" :class="ptype==2?'dq':''">进球数</span>
+                        <span @click="jumpTo(3)" :class="ptype==3?'dq':''">胜平负</span>
+                    </div>
+                </div>
+            </div>
+            <div id="mescroll" class="mescroll" ref="wrapper" style="top:44px">
+                <div id="loading" v-if="loading">
+                    <img src="img/nodate.png"/>
+                </div>
+                <div class="content2" v-else>
+                    <div class="nodata1" v-if="nomore">
+                        <img src="img/nodata.png" alt=""/>
+                        <span>暂无相关数据</span>
+                    </div>
+                    <div v-else>
+                        <div class="tj mt-10" v-if="list.news.length>0">
+                            <ul v-for="v in list.news" class="noRadius1">
+                                <li class="usertitle" v-on:click="opennative('userinfo',v.userId,v.nickName,$event)">
+                                    <span class="username">
+                                        <img :src="'https://mobile.gunqiu.com/avatar/'+v.userId+'?size=!100px'" alt="" class="pics">
+                                        <em v-if="v.level>0">
+                                            <img :src="'img/level_'+v.level+'.png'" alt="">
+                                        </em>
+                                    </span>
+                                    <span class="usermark">
+                                        <i :class="v.goodPlay!='' || v.goodSclass!='' || v.red>1 || v.sclassRed>1 ? 'nickname' : 'nickname h' ">
+                                            <em class="name">{{v.nickName}}</em>
+                                            <em class="line"></em>
+                                            <em class="mr-10">{{v.levelName}}</em>
+                                            <em class="pic" v-if="v.weekChampionCount>0">
+                                                <img src="img/rank-week.png" alt="">{{v.weekChampionCount}}
+                                            </em>
+                                            <em class="pic" v-if="v.monthChampionCount>0">
+                                                <img src="img/rank-month.png" alt="">{{v.monthChampionCount}}
+                                            </em>
+                                        </i>
+                                        <i class="playmark" v-if="v.goodPlay!='' || v.goodSclass!='' || v.red>1 || v.sclassRed>1">
+                                            <i class="lian" v-if="v.red>1 || v.sclassRed>1">{{v.red>v.sclassRed?'正在'+v.red:v.leagueName+v.sclassRed}}连红</i>
+                                            <template v-if="v.goodSclass!=''">
+                                                {{v.goodSclass}}: <em>{{v.sclassWinRate}}%</em>
+                                            </template>
+                                            <template v-if="v.goodPlay!=''">
+                                                <template v-if="v.goodPlay==1">胜平负</template>
+                                                <template v-else-if="v.goodPlay==2">让球</template>
+                                                <template v-else>进球数</template>
+                                                : <em>{{v.playWinRate}}%</em>
+                                            </template>
+                                        </i>
+                                    </span>
+                                    <span class="remark1" v-if="v.tenWinRate>0">
+                                        <i>
+                                            <em class="font-20">{{v.tenWinRate}}%</em>
+                                        </i>
+                                        近10场胜率
+                                    </span>
+                                </li>
+                                <a v-on:click="opennative('tjinfo',v.newsId,'',$event)">
+                                    <li class="contents mt-10">
+                                        <span class="choices">
+                                            推荐玩法:   <i v-if="v.playType==1">胜平负</i>
+                                            <i v-else-if="v.playType==2">让球</i>
+                                            <i v-else>进球数</i>
+                                        </span>
+                                        <span class="tj-yuan sma-top" v-if="v.canSee">
+                                            <template v-if="v.recommendResult!=''">
+                                                <img v-if="v.recommendResult=='2'" src="img/guan-2-03.png"/>
+                                                <img v-else-if="v.recommendResult=='1'" src="img/guan-2-06.png" alt=""/>
+                                                <img v-else-if="v.recommendResult=='-2'" src="img/guan-2-02.png" alt=""/>
+                                                <img v-else-if="v.recommendResult=='-1'" src="img/guan-2-08.png" alt=""/>
+                                                <img v-else-if="v.recommendResult=='0'" src="img/guan-2-04.png" alt=""/>
+                                                <img v-else-if="v.recommendResult=='10'" src="img/guan-2-10.png" alt=""/>
+                                                <img v-else-if="v.recommendResult=='-3'" src="img/guan-2-01.png" alt=""/>
+                                            </template>
+                                        </span>
+                                        <span class="playmoney" v-else>
+                                            <em></em>
+                                            ¥ {{v.amount==3800 ? 30 : v.amount/100}}&nbsp;
+                                        </span>
+                                    </li>
+                                    <li class="pinglun">
+                                        <i class="time">
+                                            <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  
+                                        </i>
+                                        <i class="readcount">
+                                            <img src="img/look.png" alt="">{{v.readCount}}
+                                        </i>
+                                        <span v-if="v.amount>0">
+                                            <i class="paycount">
+                                                <img src="img/paycount.png" alt="">{{v.buyCount}}人购买
+                                            </i>
+                                        </span>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/tuijian-list.js"></script>
+        <script>
+            document.body.addEventListener('touchstart', function() {}, false);
+        </script>
+    </body>
 </html>
