@@ -247,7 +247,7 @@
                             </span>
                             <span class="playmoney tops" v-else>
                                 <em></em>
-                                {{v.amount==3800 ? 30 : v.amount/100}}元  
+                                ¥ {{v.amount==3800 ? 30 : v.amount/100}}&nbsp;  
                             </span>
                         </li>
                         
@@ -257,7 +257,7 @@
             </div>
             <!-- <div class="tj-edit" v-on:click="fabuTj()"></div>-->
         </div>
-        <script type="text/javascript" src="js/tuijianIndex.js"></script>
+        <script type="text/javascript" src="js/tuijianIndex_debug.js"></script>
         <script>
             FastClick.attach(document.body);
             document.body.addEventListener('touchstart', function() {}, false);
