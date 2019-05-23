@@ -85,7 +85,7 @@
                          <em :class='v.detail.result=="中" && v.detail.resultOddsItem==0?"big":""'  v-if="v.detail.direct=='L'||v.detail.direct=='D,L'||v.detail.direct=='W,L'"> 负 {{v.detail.downodds}}  </em>   
                        </i>
                      </span> 
-				    <span class="jiemi" v-else> <em><b></b> {{v.price/100}}钻石</em>  </span>
+				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.amount==3800 ? 30 : v.price/100}}&nbsp;</em>  </span>
 				</span>  
                 </a>
 			</template>
@@ -110,7 +110,7 @@
                             <template v-else>客队 {{v.detail.goal | filterYagoal(2)}}</template>  
                         </em>  
                      </span> 
-				    <span class="jiemi" v-else> <em><b></b> {{v.price/100}}钻石</em>  <i>让球 {{v.detail.goal}}</i></span>
+				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.amount==3800 ? 30 : v.price/100}}&nbsp;</em>  <i>让球 {{v.detail.goal}}</i></span>
 				</span>  
 				 </a>
 			</template>
@@ -135,7 +135,7 @@
                             <template v-else>客队 {{v.detail.goal | filterYagoal(2)}}</template>  
                         </em>  
                      </span> 
-				    <span class="jiemi" v-else> <em><b></b> {{v.price/100}}钻石</em>  <i>让球 {{v.detail.goal}}</i></span>
+				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.amount==3800 ? 30 : v.price/100}}&nbsp;</em>  <i>让球 {{v.detail.goal}}</i></span>
 				</span>  
 				 </a>
 			</template>
@@ -157,7 +157,7 @@
                         <em  v-if='v.detail.result=="赢" || v.detail.result=="赢半"' :class="v.detail.direct==1?'big':'sma'">{{v.detail.direct==1?'大球':'小球'}} {{v.detail.goal}} </em>  
                           <em  v-else>{{v.detail.direct==1?'大球':'小球'}} {{v.detail.goal}} </em>  
                      </span> 
-				<span class="jiemi" v-else> <em><b></b> {{v.price/100}}钻石</em> <i>进球数 {{v.detail.goal}}</i></span> 
+				<span class="jiemi" v-else> <em><b></b>  ¥ {{v.amount==3800 ? 30 : v.price/100}}&nbsp;</em> <i>进球数 {{v.detail.goal}}</i></span> 
 				</span> 
                 </a>
 			</template>
@@ -201,7 +201,7 @@
                            <img v-else-if="v.recommendResult=='-3'" src="img/guan-2-01.png" alt="" />  
                            </template> 
 		        </span>	 
-		        <span class="playmoney"  v-else>  <em></em>  {{v.amount/100}}钻石</span>    
+		        <span class="playmoney"  v-else>  <em></em>   ¥ {{v.amount==3800 ? 30 : v.price/100}}&nbsp;</span>    
                 </li>   
 		  <li class="pinglun">  	
              <i class="time"> <img src="img/time.png" alt="">{{v.recommendTime | dateTamp}}  </i> 	
