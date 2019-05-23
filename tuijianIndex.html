@@ -234,7 +234,7 @@
                                     </span>
                                 </i>
                             </span>
-                            <span class="tj-yuan tops" v-if="v.canSee">
+                            <span class="tj-yuan tops" v-if="v.canSee || v.amount == 12800">
                                 <template v-if="v.recommendResult!=''">
                                     <img v-if="v.recommendResult=='2'" src="img/guan-2-03.png"/>
                                     <img v-else-if="v.recommendResult=='1'" src="img/guan-2-06.png" alt=""/>
