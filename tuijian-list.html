@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="telephone=no,email=no" name=format-detection />
 <title>推荐</title>  
-<link rel="stylesheet" type="text/css" href="css/style.css" />  
+<link rel="stylesheet" type="text/css" href="https://mobile.gunqiu.com/appH5/v6/css/style.css?_=9" />  
 <link rel="stylesheet" type="text/css" href="mescroll/mescroll.min.css" /> 
 <script type="text/javascript" src="//static.gunqiu.com/static/2.0.1/gqjssdk.min.js"></script>
 <script type="text/javascript"  src="js/common.js"></script> 
@@ -58,8 +58,8 @@
                          <em :class='v.detail.result=="中" && v.detail.resultOddsItem==1?"big":""'  v-if="v.detail.direct=='D'||v.detail.direct=='D,L'||v.detail.direct=='W,D'">  平 {{v.detail.goal}}  </em> 
                          <em :class='v.detail.result=="中" && v.detail.resultOddsItem==0?"big":""'  v-if="v.detail.direct=='L'||v.detail.direct=='D,L'||v.detail.direct=='W,L'"> 负 {{v.detail.downodds}}  </em>   
                        </i>
-                     </span> 
-				    <span class="jiemi" v-else> <em><b></b> {{v.price/100}}钻石</em>  </span> 
+                     </span>
+				    <span class="jiemi" v-else> <em><b></b>  ¥ {{v.amount==3800 ? 30 : v.price/100}}&nbsp; </em>  </span> 
 				</span> 
                 </a>
 			</template>
