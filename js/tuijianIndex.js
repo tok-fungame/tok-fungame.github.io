@@ -34,6 +34,7 @@ function vv(token,userId){
 	vum=new Vue({
 		el: '#app',
 		data: {
+			ids:[],
 			list:[],
 			bannerList:[],
 			hotList:[],
@@ -65,6 +66,9 @@ function vv(token,userId){
 			this.saleexpert()
 			this.redexpert()
 			this.loadPage()
+			WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
+				ids = JSON.parse(n).ids;
+			})
 		},
 		mounted:function() {  
 			this.SwiperTo()  
@@ -440,7 +444,11 @@ function vv(token,userId){
 				}, function(response) {
 					this.loading=false
 					this.more=false   
-				})  
+				})
+				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
+					ids = JSON.parse(n).ids;
+				})
+				
 			},
 			fabuTj:function(){
 				
