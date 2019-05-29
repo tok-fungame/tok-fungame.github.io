@@ -74,7 +74,7 @@ function vv(token,userId){
 			this.initMescroll() 
 		},  
 		methods: { 
-			updateGuestIds:function {
+			updateGuestIds:function() {
 				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
 					this.ids = JSON.parse(n).ids;
 				})
