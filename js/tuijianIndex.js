@@ -66,9 +66,7 @@ function vv(token,userId){
 			this.saleexpert()
 			this.redexpert()
 			this.loadPage()
-			WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
-				this.ids = JSON.parse(n).ids;
-			})
+			this.updateGuestIds()
 		},
 		mounted:function() {  
 			this.SwiperTo()  
@@ -76,6 +74,11 @@ function vv(token,userId){
 			this.initMescroll() 
 		},  
 		methods: { 
+			updateGuestIds:function {
+				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
+					this.ids = JSON.parse(n).ids;
+				})
+			},
 			modelShow:function(){
 				this.$http.get(url+'recommend/model/show').then(function(response) { 
 					var res=response.body;
