@@ -75,8 +75,9 @@ function vv(token,userId){
 		},  
 		methods: { 
 			updateGuestIds:function() {
+				var that = this;
 				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
-					this.ids = JSON.parse(n).ids;
+					that.ids = JSON.parse(n).ids;
 				})
 			},
 			modelShow:function(){
