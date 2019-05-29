@@ -445,10 +445,6 @@ function vv(token,userId){
 					this.loading=false
 					this.more=false   
 				})
-				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
-					this.ids = JSON.parse(n).ids;
-				})
-
 			},
 			fabuTj:function(){
 				
@@ -508,6 +504,9 @@ function vv(token,userId){
 					that.more=false  
 					that.isShow =true;  
 				})  
+				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
+					this.ids = JSON.parse(n).ids;
+				})
 			},
 			upCallback:function(){
 				var that=this;
