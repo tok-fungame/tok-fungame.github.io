@@ -505,7 +505,7 @@ function vv(token,userId){
 					that.isShow =true;  
 				})  
 				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
-					this.ids = JSON.parse(n).ids;
+					that.ids = JSON.parse(n).ids;
 				})
 			},
 			upCallback:function(){
