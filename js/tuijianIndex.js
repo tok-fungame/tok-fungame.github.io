@@ -67,7 +67,7 @@ function vv(token,userId){
 			this.redexpert()
 			this.loadPage()
 			WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
-				ids = JSON.parse(n).ids;
+				this.ids = JSON.parse(n).ids;
 			})
 		},
 		mounted:function() {  
@@ -446,9 +446,9 @@ function vv(token,userId){
 					this.more=false   
 				})
 				WebViewJavascriptBridge.callHandler("guestId", "", function(n) {
-					ids = JSON.parse(n).ids;
+					this.ids = JSON.parse(n).ids;
 				})
-				
+
 			},
 			fabuTj:function(){
 				
