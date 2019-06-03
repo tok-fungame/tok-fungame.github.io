@@ -1,35 +1,33 @@
 var vum = "";
-gq.ready(function() {
-    //获取token 
-    var token = "",
-        userId = ""
-    gq.getToken(function(res) {
-        if (res.token != null) {
-            token = res.token
-            gq.info(function(res) {
-                userId = res.userId;
-                platform = res.platform
-                vv(token, userId, platform)
+ gq.ready(function(){
+//获取token 
+    var token="",userId=""
+    gq.getToken(function(res){ 
+        if(res.token!=null){  
+          token=res.token
+            gq.info(function(res){  
+                userId=res.userId; 
+                platform=res.platform   
+                vv(token,userId,platform)
             })
-        }
-    })
-    gq.addEventListener("reload", function() {
-        gq.getToken(function(res) {
-            if (res.token != null) {
-                vum.token = res.token
-                gq.info(function(res) {
-                    vum.userId = res.userId;
-                })
-            } else {
-                vum.token = ""
-            }
-            Vue.http.headers.common['token'] = vum.token
-            vum.limitStart = 0
-            vum.limitStart1 = 0
-        });
-    })
-})
-
+        }   
+   })  
+   gq.addEventListener("reload",function(){ 
+           gq.getToken(function(res){  
+                if(res.token!=null){  
+                     vum.token=res.token   
+                     gq.info(function(res){  
+                         vum.userId=res.userId;   
+                      })
+                }else{ 
+                     vum.token=""
+                 }   
+              Vue.http.headers.common['token'] = vum.token
+              vum.limitStart=0
+              vum.limitStart1=0 
+          });  
+   }) 
+})   
 function vv(token, userId, platform) {
     Vue.http.headers.common['token'] = token
     vum = new Vue({
@@ -37,7 +35,7 @@ function vv(token, userId, platform) {
         data: {
             saleList: [],
             redList: [],
-            modeList: [],
+            modeList:[],
             mySwiper: "",
             loading: true,
             index: 0,
@@ -72,40 +70,37 @@ function vv(token, userId, platform) {
             document.querySelector('.swiper-container').style.height = clientH + "px"
         },
         methods: {
-            modelShow: function() {
-                this.$http.get(url + 'recommend/model/show').then(function(response) {
-                    var res = response.body;
-                    this.modeList = [];
-                    if (res.code == "200") {
-                        for (v in res.data) {
-                            if (res.data[v] == 1) {
-                                classname = "spf";
-                                type = 1
-                            } else if (res.data[v] == 2) {
-                                classname = "ya";
-                                type = 2
-                            } else if (res.data[v] == 3) {
-                                classname = "dx";
-                                type = 3
-                            } else if (res.data[v] == 4) {
-                                classname = "spf";
-                                type = 4
-                            } else if (res.data[v] == 5) {
-                                classname = "ya";
-                                type = 5
-                            } else {
-                                classname = "spf";
-                                type = 6
-                            }
-                            this.modeList.push({
-                                classname: classname,
-                                type: type
-                            })
+             modelShow:function(){
+                this.$http.get(url+'recommend/model/show').then(function(response) { 
+                    var res=response.body;
+                    this.modeList=[];
+                    if(res.code=="200"){   
+                        for(v in res.data){
+                            if(res.data[v]==1){
+                                classname="spf";
+                                type=1
+                            }else if(res.data[v]==2){
+                                classname="ya";
+                                type=2
+                            }else if(res.data[v]==3){
+                                classname="dx";
+                                type=3
+                            }else if(res.data[v]==4){
+                                classname="spf";
+                                type=4
+                            }else if(res.data[v]==5){
+                                classname="ya";
+                                type=5
+                            }else {
+                                classname="spf";
+                                type=6
+                            } 
+                            this.modeList.push({classname:classname,type:type}) 
                         }
                     }
                 }, function(response) {
-
-                })
+                    
+                }) 
             },
             salePage: function() {
                 this.$http.get(url + 'rec/hotsalers/list?limitStart=' + this.limitStart + '&limitNum=20').then(function(response) {
@@ -151,7 +146,7 @@ function vv(token, userId, platform) {
             },
             initMescroll: function() {
                 var that = this;
-                this.mescroll1 = new MeScroll("mescroll1", {
+                this.mescroll1 = new MeScroll("mescroll1",{
                     down: {
                         auto: false,
                         callback: function() {
@@ -212,7 +207,7 @@ function vv(token, userId, platform) {
                         htmlNodata: '<p class="upwarp-nodata">———  中奖更简单  ———</p>'
                     }
                 });
-                this.mescroll2 = new MeScroll("mescroll2", {
+                this.mescroll2 = new MeScroll("mescroll2",{
                     down: {
                         auto: false,
                         callback: function() {
@@ -280,7 +275,7 @@ function vv(token, userId, platform) {
             },
             SwiperTo: function() {
                 var me = this;
-                this.mySwiper = new Swiper('.swiper-container', {
+                this.mySwiper = new Swiper('.swiper-container',{
                     direction: 'horizontal',
                     on: {
                         slideChangeTransitionEnd: function() {
@@ -347,34 +342,33 @@ function vv(token, userId, platform) {
                 }
                 gq.open(datas);
             },
-            openMode: function(val) {
-                var h5url = "",
-                    title = ""
-                if (val == 1) {
-                    h5url = "spfmode.html";
-                    title = "临场胜平负"
-                } else if (val == 4) {
-                    h5url = "cpspfmode.html";
-                    title = "初始胜平负"
-                } else if (val == 2) {
-                    h5url = "yamode.html";
-                    title = "临场亚指"
-                } else if (val == 5) {
-                    h5url = "cpyamode.html";
-                    title = "初始亚指"
-                } else if (val == 3) {
-                    h5url = "dxmode.html";
-                    title = "八维指数"
-                } else {
-                    h5url = "blmode.html";
-                    title = "高赔爆冷"
+            openMode:function(val){   
+                var h5url="",title=""  
+                if(val==1){
+                    h5url="spfmode.html";
+                    title="临场胜平负"   
+                }else if(val==4){
+                    h5url="cpspfmode.html"; 
+                    title="初始胜平负"     
+                }else if(val==2){
+                    h5url="yamode.html";  
+                    title="临场亚指"      
+                }else if(val==5){
+                    h5url="cpyamode.html"; 
+                    title="初始亚指"      
+                }else if(val==3){
+                    h5url="dxmode.html";   
+                    title="八维指数"     
+                }else{
+                    h5url="blmode.html";   
+                    title="高赔爆冷"     
                 }
-                var datas = {
-                    title: "",
-                    url: linkurl + h5url,
-                    nav_hidden: true
-                }
-                gq.openH5(datas)
+                var datas={ 
+                    title:"",
+                    url:linkurl+h5url,
+                    nav_hidden:true 
+                }   
+                gq.openH5(datas) 
             }
 
         }
