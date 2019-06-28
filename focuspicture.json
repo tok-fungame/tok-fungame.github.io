@@ -18,14 +18,14 @@
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 1,
+            "linkType": 0,
             "pic": "https://tok-fungame.github.io/img/focuspicture/02.png",
             "status": 1,
             "tabType": 0,
-            "title": "來下載",
+            "title": "",
             "updateTime": "2019-04-14 14:56:19",
             "url": "",
-            "url2": "https://apps.apple.com/tw/app/%E5%A4%A9%E5%A0%82m/id1276508585"
+            "url2": ""
         },
         {
             "content": "",
@@ -35,10 +35,10 @@
             "pic": "https://tok-fungame.github.io/img/focuspicture/03.png",
             "status": 1,
             "tabType": 0,
-            "title": "下載喔",
+            "title": "",
             "updateTime": "2019-04-01 14:19:57",
             "url": "",
-            "url2": "https://apps.apple.com/tw/app/line-camera-照片編輯/id516561342"
+            "url2": ""
         }
     ],
     "msg": "处理成功",
