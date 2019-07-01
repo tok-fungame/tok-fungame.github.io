@@ -5,14 +5,14 @@
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 1,
+            "linkType": 3,
             "pic": "https://tok-fungame.github.io/img/focuspicture/01.png",
             "status": 1,
             "tabType": 0,
-            "title": "跳轉網頁",
+            "title": "",
             "updateTime": "2019-04-15 10:44:46",
             "url": "",
-            "url2": "https://apple.com"
+            "url2": "https://apps.apple.com/cn/app/id1469849160"
         },
         {
             "content": "",
@@ -31,14 +31,14 @@
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 0,
+            "linkType": 3,
             "pic": "https://tok-fungame.github.io/img/focuspicture/03.png",
             "status": 1,
             "tabType": 0,
             "title": "",
             "updateTime": "2019-04-01 14:19:57",
             "url": "",
-            "url2": ""
+            "url2": "https://apps.apple.com/cn/app/id1469849160"
         }
     ],
     "msg": "处理成功",
