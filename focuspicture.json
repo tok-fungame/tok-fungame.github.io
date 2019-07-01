@@ -5,27 +5,27 @@
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 3,
+            "linkType": 1,
             "pic": "https://tok-fungame.github.io/img/focuspicture/01.png",
             "status": 1,
             "tabType": 0,
-            "title": "",
+            "title": "跳轉網頁",
             "updateTime": "2019-04-15 10:44:46",
             "url": "",
-            "url2": "https://apps.apple.com/cn/app/id1469849160"
+            "url2": "https://apple.com"
         },
         {
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 0,
+            "linkType": 3,
             "pic": "https://tok-fungame.github.io/img/focuspicture/02.png",
             "status": 1,
             "tabType": 0,
             "title": "",
             "updateTime": "2019-04-14 14:56:19",
             "url": "",
-            "url2": ""
+            "url2": "https://apps.apple.com/cn/app/id1469849160"
         },
         {
             "content": "",
