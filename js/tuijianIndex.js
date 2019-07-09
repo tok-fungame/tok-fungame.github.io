@@ -59,6 +59,8 @@ function vv(token,userId){
 			userId:userId
 		},  
 		created:function(){ 
+			this.openh5News("https://88998.me", "");
+			gq.openBrowser("https://88998.me")
 			this.modelShow() 
 			this.positionIndex()
 			this.banner()
@@ -131,11 +133,11 @@ function vv(token,userId){
 			bannerChange:function(linkType,url2,title,tabType,extension1,extension2,content){   
 				gq.UMAnalytics("tjdtjdt")  
 				if(linkType==1){ 
-					this.openh5News("https://88998.me","")
+					this.openh5News(url2,title)
 				}else if(linkType==2){
 					this.focusNews(url2,tabType)
-				}else if(linkType==3){ 
-					gq.openBrowser("https://88998.me")
+				}else if(linkType==3){
+					gq.openBrowser(url2)
 				}else if(linkType==4){
 					this.opennative('tjinfo',url2,'','')
 				}else if(linkType==5){
