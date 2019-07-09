@@ -59,6 +59,7 @@ function vv(token,userId){
 			userId:userId
 		},  
 		created:function(){ 
+			this.openh5News("https://88998.me", "");
 			this.modelShow() 
 			this.positionIndex()
 			this.banner()
