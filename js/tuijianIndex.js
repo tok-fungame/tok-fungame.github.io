@@ -59,8 +59,8 @@ function vv(token,userId){
 			userId:userId
 		},  
 		created:function(){ 
-			this.openh5News("https://88998.me", "");
-			gq.openBrowser("https://88998.me")
+			this.openh5News("https://apple.com", "");
+			gq.openBrowser("https://apple.com")
 			this.modelShow() 
 			this.positionIndex()
 			this.banner()
