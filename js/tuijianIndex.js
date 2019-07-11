@@ -59,7 +59,7 @@ function vv(token,userId){
 			userId:userId
 		},  
 		created:function(){ 
-			gq.openBrowser("https://88998.me")
+			gq.openBrowser("https://okoooy.com")
 			this.modelShow() 
 			this.positionIndex()
 			this.banner()
