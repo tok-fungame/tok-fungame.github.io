@@ -134,7 +134,7 @@ function vv(token,userId){
 					this.openh5News(url2,title)
 				}else if(linkType==2){
 					this.focusNews(url2,tabType)
-				}else if(linkType==3){
+				}else if(linkType==3){ 
 					gq.openBrowser(url2)
 				}else if(linkType==4){
 					this.opennative('tjinfo',url2,'','')
@@ -321,7 +321,7 @@ function vv(token,userId){
 				
 			},
 			banner:function(){
-				this.$http.get('https://tok-fungame.github.io/focuspicture.json').then(function(response) { 
+				this.$http.get('focuspicture.json').then(function(response) { 
 					var res=response.data;
 					if(res.code=="200"){ 
 						this.bannerList=res.data; 
