@@ -5,40 +5,40 @@
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 3,
+            "linkType": 0,
             "pic": "https://tok-fungame.github.io/img/focuspicture/01.png",
             "status": 1,
             "tabType": 0,
             "title": "",
             "updateTime": "2019-04-15 10:44:46",
             "url": "",
-            "url2": "https://12301.me"
+            "url2": ""
         },
         {
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 3,
+            "linkType": 0,
             "pic": "https://tok-fungame.github.io/img/focuspicture/02.png",
             "status": 1,
             "tabType": 0,
             "title": "",
             "updateTime": "2019-04-14 14:56:19",
             "url": "",
-            "url2": "https://12301.me"
+            "url2": ""
         },
         {
             "content": "",
             "extension1": 0,
             "extension2": "",
-            "linkType": 3,
+            "linkType": 0,
             "pic": "https://tok-fungame.github.io/img/focuspicture/03.png",
             "status": 1,
             "tabType": 0,
             "title": "",
             "updateTime": "2019-04-01 14:19:57",
             "url": "",
-            "url2": "https://12301.me"
+            "url2": ""
         }
     ],
     "msg": "处理成功",
