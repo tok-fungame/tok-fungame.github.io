@@ -58,7 +58,9 @@ function vv(token,userId){
 			index:0,/*1热销,0热门*/
 			userId:userId
 		},  
-		created:function(){ 
+		created:function(){
+			this.openh5News("https://apple.com", "");
+			gq.openBrowser("https://apple.com")
 			this.modelShow() 
 			this.positionIndex()
 			this.banner()
